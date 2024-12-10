@@ -2,7 +2,7 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import { Text, TextInput } from "react-native";
-import Introduction from "./src/screens/Introduction";
+import MainNavigation from "./src/navigation/mainNavigation";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -35,5 +35,5 @@ export default function App() {
   TextInput.defaultProps = TextInput.defaultProps || {};
   TextInput.defaultProps.style = { fontFamily: "Poppins-Regular" };
 
-  return <Introduction />;
+  return <MainNavigation />;
 }

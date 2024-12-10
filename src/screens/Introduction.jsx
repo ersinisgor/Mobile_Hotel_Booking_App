@@ -8,8 +8,10 @@ import {
 } from "react-native";
 import { WIDTH, HEIGHT, PADDING } from "../utils/constants";
 import Button from "../components/Button";
+import { useNavigation } from "@react-navigation/native";
 
 const Introduction = () => {
+  const navigation = useNavigation();
   return (
     <ImageBackground
       source={require("../../assets/images/intro.jpg")}
@@ -26,7 +28,12 @@ const Introduction = () => {
         <Text style={styles.main_info}>
           Search through 10,234 hotels in Hotel Travel
         </Text>
-        <Button title="Get Started" onPress={() => {}} />
+        <Button
+          title="Get Started"
+          onPress={() => {
+            navigation.navigate("Login");
+          }}
+        />
       </View>
     </ImageBackground>
   );
