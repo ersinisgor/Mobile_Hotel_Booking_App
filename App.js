@@ -2,7 +2,8 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import { Text, TextInput } from "react-native";
-import MainNavigation from "./src/navigation/mainNavigation";
+import Introduction from "./src/screens/Introduction";
+import MainNavigation from "./src/navigation/MainNavigation";
 
 SplashScreen.preventAutoHideAsync();
 
