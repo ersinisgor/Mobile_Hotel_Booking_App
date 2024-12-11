@@ -8,13 +8,18 @@ import CustomButton from "./CustomButton";
 import CustomInput from "./CustomInput";
 
 const AuthForm = ({ type }) => {
-  const [secureTextEntry, setSecureTextEntry] = useState(true);
+  const [secureText, setSecureText] = useState(true);
+  const [secureTextConfirm, setSecureTextConfirm] = useState(true);
   const [rememberMe, setRememberMe] = useState(false);
 
   const navigation = useNavigation();
 
-  const updateSecureTextEntry = () => {
-    setSecureTextEntry(prev => !prev);
+  const updateSecureText = () => {
+    setSecureText(prev => !prev);
+  };
+
+  const updateSecureTextConfirm = () => {
+    setSecureTextConfirm(prev => !prev);
   };
 
   const updateRememberMe = () => {
@@ -37,9 +42,9 @@ const AuthForm = ({ type }) => {
             placeholder="Password"
             iconName="lock-closed"
             keyboardType="default"
-            secureTextEntry={secureTextEntry}
+            secureTextEntry={secureText}
             isPassword={true}
-            onToggleSecureEntry={updateSecureTextEntry}
+            onToggleSecureEntry={updateSecureText}
           />
         </View>
         {type === "Login" ? (
@@ -64,9 +69,9 @@ const AuthForm = ({ type }) => {
             placeholder="Confirm Password"
             iconName="lock-closed"
             keyboardType="default"
-            secureTextEntry={secureTextEntry}
+            secureTextEntry={secureTextConfirm}
             isPassword={true}
-            onToggleSecureEntry={updateSecureTextEntry}
+            onToggleSecureEntry={updateSecureTextConfirm}
           />
         )}
       </View>
