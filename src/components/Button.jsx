@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "#fff",
-    fontSize: 18,
+    fontSize: 16,
     textAlign: "center",
     // fontFamily: "Lato-Bold",
     fontFamily: "Poppins-SemiBold",
