@@ -24,7 +24,14 @@ const MainNavigation = () => {
         <Stack.Screen
           name="Login"
           component={Login}
-          options={{ headerShown: false }}
+          options={{
+            title: "",
+            headerStyle: {
+              elevation: 0,
+              shadowOpacity: 0,
+              borderBottomWidth: 0,
+            },
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>

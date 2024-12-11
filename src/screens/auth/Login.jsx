@@ -1,12 +1,9 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import AuthForm from "../../components/AuthForm";
 
 const Login = () => {
-  return (
-    <View>
-      <Text>Login</Text>
-    </View>
-  );
+  return <AuthForm type="Login" />;
 };
 
 export default Login;
