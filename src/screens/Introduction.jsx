@@ -22,11 +22,10 @@ const Introduction = () => {
       <View style={styles.container}>
         <Text style={styles.main_text}>Find your ideal Hotel to stay</Text>
         <Text style={styles.main_description}>
-          Discover the best hotels at great prices when you search with Hotel
-          Travel
+          Discover the best hotels at great prices when you search with Travel
         </Text>
         <Text style={styles.main_info}>
-          Search through 10,234 hotels in Hotel Travel
+          Search through 10,234 hotels in Travel
         </Text>
         <CustomButton
           title="Get Started"
@@ -80,6 +79,6 @@ const styles = StyleSheet.create({
     bottom: HEIGHT / 4,
     width: WIDTH - PADDING * 2,
     color: "#fff",
-    fontSize: 16,
+    fontSize: 18,
   },
 });
