@@ -2,7 +2,7 @@ import { Pressable, StyleSheet, Text } from "react-native";
 import React from "react";
 import { COLORS } from "../utils/constants";
 
-const Button = ({ title, onPress, style, disabled, width }) => {
+const CustomButton = ({ title, onPress, style, disabled, width }) => {
   return (
     <Pressable onPress={onPress} style={styles.button}>
       <Text style={styles.text}>{title}</Text>
@@ -10,7 +10,7 @@ const Button = ({ title, onPress, style, disabled, width }) => {
   );
 };
 
-export default Button;
+export default CustomButton;
 
 const styles = StyleSheet.create({
   button: {

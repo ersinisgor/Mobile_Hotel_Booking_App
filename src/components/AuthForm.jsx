@@ -1,20 +1,16 @@
-import {
-  Pressable,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-  Image,
-} from "react-native";
+import { Pressable, StyleSheet, Text, View, Image } from "react-native";
 import React, { useState } from "react";
 import { COLORS, HEIGHT, PADDING, WIDTH } from "../utils/constants";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import Button from "./Button";
+import CustomButton from "./CustomButton";
+import CustomInput from "./CustomInput";
 
 const AuthForm = ({ type }) => {
   const [secureTextEntry, setSecureTextEntry] = useState(true);
   const [rememberMe, setRememberMe] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const updateSecureTextEntry = () => {
     setSecureTextEntry(prev => !prev);
@@ -29,37 +25,23 @@ const AuthForm = ({ type }) => {
       <Text style={styles.title}>{type}</Text>
       <View>
         <View>
-          <View style={styles.input}>
-            <Ionicons name="mail" style={styles.icon} />
-            <TextInput
-              placeholder="Email"
-              style={styles.inputText}
-              keyboardType="email-address"
-              autoCapitalize="none"
-              autoCorrect={false}
-              textContentType="emailAddress"
-            />
-          </View>
-          <View style={styles.input}>
-            <Ionicons name="lock-closed" style={styles.icon} />
-            <TextInput
-              placeholder="Password"
-              style={styles.inputText}
-              keyboardType="default"
-              autoCapitalize="none"
-              autoCorrect={false}
-              textContentType="password"
-              secureTextEntry={secureTextEntry}
-            />
-            <Pressable onPress={updateSecureTextEntry}>
-              <Ionicons
-                name={secureTextEntry ? "eye-off" : "eye"}
-                style={styles.icon}
-              />
-            </Pressable>
-          </View>
+          <CustomInput
+            placeholder="Email"
+            iconName="mail"
+            keyboardType="email-address"
+            secureTextEntry={false}
+            isPassword={false}
+          />
+          <CustomInput
+            placeholder="Password"
+            iconName="lock-closed"
+            keyboardType="default"
+            secureTextEntry={secureTextEntry}
+            isPassword={true}
+            onToggleSecureEntry={updateSecureTextEntry}
+          />
         </View>
-        {type === "Login" && (
+        {type === "Login" ? (
           <View style={styles.forget}>
             <View style={styles.checkboxContainer}>
               <Pressable onPress={updateRememberMe}>
@@ -76,10 +58,19 @@ const AuthForm = ({ type }) => {
               <Text style={styles.forgetText}>Forgot Password?</Text>
             </Pressable>
           </View>
+        ) : (
+          <CustomInput
+            placeholder="Confirm Password"
+            iconName="lock-closed"
+            keyboardType="default"
+            secureTextEntry={secureTextEntry}
+            isPassword={true}
+            onToggleSecureEntry={updateSecureTextEntry}
+          />
         )}
       </View>
       <View style={styles.divider}>
-        <Button title={type} />
+        <CustomButton title={type} />
         <Text style={styles.orText}>or</Text>
         <View style={styles.authTypeContainer}>
           <View style={styles.iconTextContainer}>
@@ -126,14 +117,6 @@ const styles = StyleSheet.create({
     color: COLORS.primary,
     marginVertical: HEIGHT / 24,
     marginBottom: HEIGHT / 12,
-  },
-  input: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "flex-start",
-    borderBottomWidth: 1,
-    borderBottomColor: COLORS.secondary,
-    marginBottom: HEIGHT / 24,
   },
   icon: {
     marginHorizontal: 10,

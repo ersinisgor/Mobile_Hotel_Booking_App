@@ -7,7 +7,7 @@ import {
   StatusBar,
 } from "react-native";
 import { WIDTH, HEIGHT, PADDING } from "../utils/constants";
-import Button from "../components/Button";
+import CustomButton from "../components/CustomButton";
 import { useNavigation } from "@react-navigation/native";
 
 const Introduction = () => {
@@ -28,7 +28,7 @@ const Introduction = () => {
         <Text style={styles.main_info}>
           Search through 10,234 hotels in Hotel Travel
         </Text>
-        <Button
+        <CustomButton
           title="Get Started"
           onPress={() => {
             navigation.navigate("Login");
