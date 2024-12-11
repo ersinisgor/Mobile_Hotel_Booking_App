@@ -6,13 +6,55 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import CustomButton from "./CustomButton";
 import CustomInput from "./CustomInput";
+import { auth } from "../../firebase";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 
 const AuthForm = ({ type }) => {
   const [secureText, setSecureText] = useState(true);
   const [secureTextConfirm, setSecureTextConfirm] = useState(true);
   const [rememberMe, setRememberMe] = useState(false);
 
+  const [email, setemail] = useState("test@mail.com");
+  const [password, setPassword] = useState("123456");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
   const navigation = useNavigation();
+
+  const handleSignUp = async () => {
+    if (password !== confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      const user = auth.currentUser;
+      console.log(user);
+    } catch (error) {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode, errorMessage);
+    }
+  };
+
+  const handleLogin = async () => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+      console.log("User logged in:", user.email);
+    } catch (error) {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode, errorMessage);
+    }
+  };
 
   const updateSecureText = () => {
     setSecureText(prev => !prev);
@@ -37,6 +79,8 @@ const AuthForm = ({ type }) => {
             keyboardType="email-address"
             secureTextEntry={false}
             isPassword={false}
+            value={email}
+            onChangeText={setemail}
           />
           <CustomInput
             placeholder="Password"
@@ -45,6 +89,8 @@ const AuthForm = ({ type }) => {
             secureTextEntry={secureText}
             isPassword={true}
             onToggleSecureEntry={updateSecureText}
+            value={password}
+            onChangeText={setPassword}
           />
         </View>
         {type === "Login" ? (
@@ -72,11 +118,16 @@ const AuthForm = ({ type }) => {
             secureTextEntry={secureTextConfirm}
             isPassword={true}
             onToggleSecureEntry={updateSecureTextConfirm}
+            value={confirmPassword}
+            onChangeText={setConfirmPassword}
           />
         )}
       </View>
       <View style={styles.divider}>
-        <CustomButton title={type} />
+        <CustomButton
+          title={type}
+          onPress={type === "Login" ? handleLogin : handleSignUp}
+        />
         <Text style={styles.orText}>or</Text>
         <View style={styles.authTypeContainer}>
           <View style={styles.iconTextContainer}>

@@ -10,6 +10,8 @@ const CustomInput = ({
   secureTextEntry = false,
   isPassword = false,
   onToggleSecureEntry,
+  value,
+  onChangeText,
 }) => {
   return (
     <View style={styles.input}>
@@ -24,6 +26,8 @@ const CustomInput = ({
         autoComplete="off"
         textContentType={isPassword ? "password" : "emailAddress"}
         secureTextEntry={secureTextEntry}
+        value={value}
+        onChangeText={onChangeText}
       />
       {isPassword && (
         <Pressable onPress={onToggleSecureEntry}>
