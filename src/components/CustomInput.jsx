@@ -21,6 +21,7 @@ const CustomInput = ({
         keyboardType={keyboardType}
         autoCapitalize="none"
         autoCorrect={false}
+        autoComplete="off"
         textContentType={isPassword ? "password" : "emailAddress"}
         secureTextEntry={secureTextEntry}
       />
