@@ -1,6 +1,7 @@
 import { Pressable, StyleSheet, Text, View, Image } from "react-native";
 import React, { useState } from "react";
 import { COLORS, HEIGHT, PADDING, WIDTH } from "../utils/constants";
+import { useNavigation } from "@react-navigation/native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import CustomButton from "./CustomButton";
@@ -9,8 +10,8 @@ import CustomInput from "./CustomInput";
 const AuthForm = ({ type }) => {
   const [secureTextEntry, setSecureTextEntry] = useState(true);
   const [rememberMe, setRememberMe] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+
+  const navigation = useNavigation();
 
   const updateSecureTextEntry = () => {
     setSecureTextEntry(prev => !prev);
@@ -93,9 +94,19 @@ const AuthForm = ({ type }) => {
           </View>
         </View>
         <View style={styles.linkContainer}>
-          <Text style={styles.forgetText}>Don't have an account?</Text>
-          <Pressable onPress={() => {}}>
-            <Text style={styles.link}>Sign Up</Text>
+          <Text style={styles.forgetText}>
+            {type === "Login"
+              ? "Don't have an account?"
+              : "Already have an account?"}
+          </Text>
+          <Pressable
+            onPress={() =>
+              navigation.navigate(type === "Login" ? "Signup" : "Login")
+            }
+          >
+            <Text style={styles.link}>
+              {type === "Login" ? "Sign Up" : "Login"}
+            </Text>
           </Pressable>
         </View>
       </View>

@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Login from "../screens/auth/Login";
 import Introduction from "../screens/Introduction";
+import Signup from "../screens/auth/Signup";
 
 const Stack = createStackNavigator();
 
@@ -24,6 +25,18 @@ const MainNavigation = () => {
         <Stack.Screen
           name="Login"
           component={Login}
+          options={{
+            title: "",
+            headerStyle: {
+              elevation: 0,
+              shadowOpacity: 0,
+              borderBottomWidth: 0,
+            },
+          }}
+        />
+        <Stack.Screen
+          name="Signup"
+          component={Signup}
           options={{
             title: "",
             headerStyle: {
