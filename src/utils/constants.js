@@ -10,7 +10,9 @@ const COLORS = {
   secondary: "#1976D2",
   inActiveFont: "#B1ACAC",
   inActiveTab: "#B8B8B9",
-  tabsBackground: "rgba(227, 227, 228, 0.19)",
+  inActiveLine: "#E3E3E4",
+  inActiveBackground: "rgba(228,228,228,0.3)",
+  activeProfile: "#0FA958",
 };
 
 export { COLORS, WIDTH, HEIGHT, PADDING, PADDING_SM };
