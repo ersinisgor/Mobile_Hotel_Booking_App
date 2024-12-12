@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+import PagerView from "react-native-pager-view";
 import {
   MaterialIcons,
   MaterialCommunityIcons,
@@ -22,8 +23,13 @@ import { auth } from "../../../firebase";
 const Home = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [activeSlide, setActiveSlide] = useState(1);
 
   const navigation = useNavigation();
+
+  const handleSlideChange = event => {
+    setActiveSlide(event.nativeEvent.position);
+  };
 
   const toggleMenu = () => {
     setIsMenuVisible(!isMenuVisible);
@@ -91,46 +97,109 @@ const Home = () => {
           <View style={styles.mainContent}></View>
 
           {/* Slider */}
-          <View style={styles.sliderContainer}></View>
+          <View style={styles.sliderContainer}>
+            <PagerView
+              style={styles.pagerView}
+              initialPage={1}
+              pageMargin={PADDING_SM}
+              onPageSelected={handleSlideChange}
+            >
+              <View key="1">
+                <Image
+                  source={require("../../../assets/images/slider1.jpg")}
+                  style={styles.sliderImage}
+                />
+                <View style={styles.sliderTextContainer}>
+                  <Text style={styles.sliderTextSemibold}>Last-minute</Text>
+                  <Text style={styles.sliderTextbold}>
+                    weekend<Text style={styles.sliderText}> deals</Text>
+                  </Text>
+                  {/* <Text style={styles.sliderText}>first booking</Text> */}
+                </View>
+              </View>
+              <View key="2">
+                <Image
+                  source={require("../../../assets/images/slider8.jpg")}
+                  style={styles.sliderImage}
+                />
+                <View style={styles.sliderTextContainer}>
+                  <Text style={styles.sliderTextSemibold}>Get</Text>
+                  <Text style={styles.sliderTextbold}>
+                    10% OFF<Text style={styles.sliderText}> on your</Text>
+                  </Text>
+                  <Text style={styles.sliderText}>first booking</Text>
+                </View>
+              </View>
+              <View key="3">
+                <Image
+                  source={require("../../../assets/images/slider5.jpg")}
+                  style={styles.sliderImage}
+                />
+                <View style={styles.sliderTextContainer}>
+                  <Text style={styles.sliderTextSemibold}>Planing</Text>
+                  <Text style={styles.sliderText}>
+                    a new <Text style={styles.sliderTextbold}>Escape?</Text>
+                  </Text>
+                  <Text style={styles.sliderText}>Let's explore</Text>
+                </View>
+              </View>
+            </PagerView>
+
+            <View style={styles.dotsContainer}>
+              {[0, 1, 2].map(index => (
+                <View
+                  key={index}
+                  style={[
+                    styles.dot,
+                    activeSlide === index
+                      ? styles.activeDot
+                      : styles.inactiveDot,
+                  ]}
+                />
+              ))}
+            </View>
+          </View>
         </View>
 
         {/* Hamburger Menu */}
         {isMenuVisible && (
-          <SafeAreaView style={styles.menu}>
-            <TouchableOpacity style={styles.closeButton} onPress={toggleMenu}>
-              <MaterialIcons name="close" size={24} color="#fff" />
-            </TouchableOpacity>
+          <SafeAreaView style={styles.menu} edges={["top", "left", "right"]}>
+            <View style={styles.menuView}>
+              <TouchableOpacity style={styles.closeButton} onPress={toggleMenu}>
+                <MaterialIcons name="close" size={24} color="#fff" />
+              </TouchableOpacity>
 
-            <TouchableOpacity
-              style={styles.menuItem}
-              onPress={() => {
-                toggleMenu();
-                navigation.navigate("EditProfile");
-              }}
-            >
-              <MaterialCommunityIcons
-                name="account-edit"
-                size={24}
-                color="#fff"
-              />
-              <Text style={styles.menuItemText}>Edit Profile</Text>
-            </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.menuItem}
+                onPress={() => {
+                  toggleMenu();
+                  navigation.navigate("EditProfile");
+                }}
+              >
+                <MaterialCommunityIcons
+                  name="account-edit"
+                  size={24}
+                  color="#fff"
+                />
+                <Text style={styles.menuItemText}>Edit Profile</Text>
+              </TouchableOpacity>
 
-            <View style={styles.menuItem}>
-              <Ionicons name="moon" size={21} color="#fff" />
-              <Text style={styles.menuItemText}>Dark Mode</Text>
-              <Switch
-                value={isDarkMode}
-                onValueChange={setIsDarkMode}
-                trackColor={{ false: "#767577", true: "#81b0ff" }}
-                thumbColor={isDarkMode ? "#f5dd4b" : "#f4f3f4"}
-              />
+              <View style={styles.menuItem}>
+                <Ionicons name="moon" size={21} color="#fff" />
+                <Text style={styles.menuItemText}>Dark Mode</Text>
+                <Switch
+                  value={isDarkMode}
+                  onValueChange={setIsDarkMode}
+                  trackColor={{ false: "#767577", true: "#81b0ff" }}
+                  thumbColor={isDarkMode ? "#f5dd4b" : "#f4f3f4"}
+                />
+              </View>
+
+              <TouchableOpacity style={styles.menuItem} onPress={handleLogout}>
+                <MaterialIcons name="logout" size={24} color="#fff" />
+                <Text style={styles.menuItemText}>Logout</Text>
+              </TouchableOpacity>
             </View>
-
-            <TouchableOpacity style={styles.menuItem} onPress={handleLogout}>
-              <MaterialIcons name="logout" size={24} color="#fff" />
-              <Text style={styles.menuItemText}>Logout</Text>
-            </TouchableOpacity>
           </SafeAreaView>
         )}
       </View>
@@ -227,6 +296,64 @@ const styles = StyleSheet.create({
     flex: 1,
     marginVertical: "auto",
   },
+  // Slider
+  sliderContainer: {
+    height: WIDTH / 3,
+    marginBottom: PADDING_SM,
+  },
+  pagerView: {
+    flex: 1,
+  },
+  sliderImage: {
+    width: "100%",
+    height: "100%",
+    resizeMode: "cover",
+    borderRadius: 10,
+  },
+  sliderTextContainer: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    paddingVertical: 8,
+    paddingHorizontal: PADDING_SM,
+    backgroundColor: "rgba(0,0,0,0.4)",
+    borderRadius: 10,
+  },
+  sliderTextSemibold: {
+    color: "#fff",
+    fontSize: 20,
+    fontFamily: "Poppins-SemiBold",
+  },
+  sliderTextbold: {
+    color: "#fff",
+    fontSize: 22,
+    fontFamily: "Poppins-Bold",
+  },
+  sliderText: {
+    color: "#fff",
+    fontSize: 20,
+    fontFamily: "Poppins-Medium",
+  },
+  dotsContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 10,
+  },
+  dot: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    marginHorizontal: 5,
+  },
+  activeDot: {
+    backgroundColor: COLORS.primary,
+  },
+  inactiveDot: {
+    backgroundColor: COLORS.inActiveLine,
+  },
   // Hamburger Menu
   menu: {
     position: "absolute",
@@ -234,7 +361,11 @@ const styles = StyleSheet.create({
     left: 0,
     bottom: 0,
     width: WIDTH / 2,
+
     backgroundColor: COLORS.primary,
+    zIndex: 2,
+  },
+  menuView: {
     padding: PADDING,
   },
   closeButton: {

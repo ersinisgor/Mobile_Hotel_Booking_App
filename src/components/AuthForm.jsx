@@ -101,7 +101,7 @@ const AuthForm = ({ type }) => {
               <Pressable onPress={updateRememberMe}>
                 <MaterialCommunityIcons
                   name={
-                    rememberMe ? "checkbox-blank-outline" : "checkbox-marked"
+                    rememberMe ? "checkbox-marked" : "checkbox-blank-outline"
                   }
                   style={styles.icon}
                 />
