@@ -1,7 +1,6 @@
 import {
   Image,
   Pressable,
-  ScrollView,
   StyleSheet,
   Switch,
   Text,
@@ -41,93 +40,100 @@ const Home = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View>
-        <TouchableOpacity onPress={toggleMenu}>
-          <MaterialIcons name="menu" size={24} color="#000" />
-        </TouchableOpacity>
-      </View>
-
-      {/* Main Content */}
-      <ScrollView style={styles.content}>
-        {/* Header */}
-        <View style={styles.headerContainer}>
-          <View style={styles.profileContainer}>
-            <View style={styles.imageContainer}>
-              <Image
-                source={require("../../../assets/images/profile.jpg")}
-                style={styles.profileImage}
-              />
-              <View style={styles.badge}></View>
-              <View style={styles.badge_2}></View>
-            </View>
-
-            <Text>
-              👋 Hello <Text style={styles.name}>John</Text>
-            </Text>
-          </View>
-          <View style={styles.searchContainer}>
-            <View style={styles.searchBar}>
-              <TextInput
-                style={styles.searchText}
-                placeholder="Search for hotels"
-              />
-              <Pressable onPress={() => {}}>
-                <MaterialIcons name="search" size={24} />
-              </Pressable>
-            </View>
-            <View style={styles.filterIcon}>
-              <TouchableOpacity>
-                <MaterialIcons
-                  name="filter-list"
-                  size={24}
-                  color={COLORS.primary}
-                />
-              </TouchableOpacity>
-            </View>
-          </View>
+    <SafeAreaView style={styles.container} edges={["top", "left", "right"]}>
+      <View style={styles.viewContainer}>
+        <View>
+          <TouchableOpacity onPress={toggleMenu}>
+            <MaterialIcons name="menu" size={24} color="#000" />
+          </TouchableOpacity>
         </View>
-      </ScrollView>
 
-      {/* Hamburger Menu */}
-      {isMenuVisible && (
-        <SafeAreaView style={styles.menu}>
-          <TouchableOpacity style={styles.closeButton} onPress={toggleMenu}>
-            <MaterialIcons name="close" size={24} color="#fff" />
-          </TouchableOpacity>
+        <View style={styles.content}>
+          {/* Header */}
+          <View style={styles.headerContainer}>
+            <View style={styles.profileContainer}>
+              <View style={styles.imageContainer}>
+                <Image
+                  source={require("../../../assets/images/profile.jpg")}
+                  style={styles.profileImage}
+                />
+                <View style={styles.badge}></View>
+                <View style={styles.badge_2}></View>
+              </View>
 
-          <TouchableOpacity
-            style={styles.menuItem}
-            onPress={() => {
-              toggleMenu();
-              navigation.navigate("EditProfile");
-            }}
-          >
-            <MaterialCommunityIcons
-              name="account-edit"
-              size={24}
-              color="#fff"
-            />
-            <Text style={styles.menuItemText}>Edit Profile</Text>
-          </TouchableOpacity>
-
-          <View style={styles.menuItem}>
-            <Ionicons name="moon" size={21} color="#fff" />
-            <Text style={styles.menuItemText}>Dark Mode</Text>
-            <Switch
-              value={isDarkMode}
-              onValueChange={setIsDarkMode}
-              trackColor={{ false: "#767577", true: "#81b0ff" }}
-              thumbColor={isDarkMode ? "#f5dd4b" : "#f4f3f4"}
-            />
+              <Text>
+                👋 Hello <Text style={styles.name}>John</Text>
+              </Text>
+            </View>
+            <View style={styles.searchContainer}>
+              <View style={styles.searchBar}>
+                <TextInput
+                  style={styles.searchText}
+                  placeholder="Search for hotels"
+                />
+                <Pressable onPress={() => {}}>
+                  <MaterialIcons name="search" size={24} />
+                </Pressable>
+              </View>
+              <View style={styles.filterIcon}>
+                <TouchableOpacity>
+                  <MaterialIcons
+                    name="filter-list"
+                    size={24}
+                    color={COLORS.primary}
+                  />
+                </TouchableOpacity>
+              </View>
+            </View>
           </View>
 
-          <TouchableOpacity style={styles.menuItem} onPress={handleLogout}>
-            <MaterialIcons name="logout" size={24} color="#fff" />
-            <Text style={styles.menuItemText}>Logout</Text>
-          </TouchableOpacity>
-        </SafeAreaView>
-      )}
+          {/* Main Content */}
+          <View style={styles.mainContent}></View>
+
+          {/* Slider */}
+          <View style={styles.sliderContainer}></View>
+        </View>
+
+        {/* Hamburger Menu */}
+        {isMenuVisible && (
+          <SafeAreaView style={styles.menu}>
+            <TouchableOpacity style={styles.closeButton} onPress={toggleMenu}>
+              <MaterialIcons name="close" size={24} color="#fff" />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.menuItem}
+              onPress={() => {
+                toggleMenu();
+                navigation.navigate("EditProfile");
+              }}
+            >
+              <MaterialCommunityIcons
+                name="account-edit"
+                size={24}
+                color="#fff"
+              />
+              <Text style={styles.menuItemText}>Edit Profile</Text>
+            </TouchableOpacity>
+
+            <View style={styles.menuItem}>
+              <Ionicons name="moon" size={21} color="#fff" />
+              <Text style={styles.menuItemText}>Dark Mode</Text>
+              <Switch
+                value={isDarkMode}
+                onValueChange={setIsDarkMode}
+                trackColor={{ false: "#767577", true: "#81b0ff" }}
+                thumbColor={isDarkMode ? "#f5dd4b" : "#f4f3f4"}
+              />
+            </View>
+
+            <TouchableOpacity style={styles.menuItem} onPress={handleLogout}>
+              <MaterialIcons name="logout" size={24} color="#fff" />
+              <Text style={styles.menuItemText}>Logout</Text>
+            </TouchableOpacity>
+          </SafeAreaView>
+        )}
+      </View>
     </SafeAreaView>
   );
 };
@@ -138,11 +144,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+  },
+  viewContainer: {
+    flex: 1,
     paddingHorizontal: PADDING_SM,
   },
   content: {
     flex: 1,
   },
+  // Header
   headerContainer: {
     borderColor: COLORS.inActiveLine,
     borderWidth: 1,
@@ -212,6 +222,12 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: COLORS.inActiveLine,
   },
+  // Main Content
+  mainContent: {
+    flex: 1,
+    marginVertical: "auto",
+  },
+  // Hamburger Menu
   menu: {
     position: "absolute",
     top: 0,
