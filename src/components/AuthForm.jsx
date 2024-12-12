@@ -33,6 +33,7 @@ const AuthForm = ({ type }) => {
       await createUserWithEmailAndPassword(auth, email, password);
       const user = auth.currentUser;
       console.log(user);
+      navigation.navigate("Login");
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -49,6 +50,7 @@ const AuthForm = ({ type }) => {
       );
       const user = userCredential.user;
       console.log("User logged in:", user.email);
+      navigation.navigate("Tabs");
     } catch (error) {
       const errorCode = error.code;
       const errorMessage = error.message;

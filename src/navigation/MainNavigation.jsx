@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Login from "../screens/auth/Login";
 import Introduction from "../screens/Introduction";
 import Signup from "../screens/auth/Signup";
+import BottomNavigation from "./BottomNavigation";
 
 const Stack = createStackNavigator();
 
@@ -45,6 +46,11 @@ const MainNavigation = () => {
               borderBottomWidth: 0,
             },
           }}
+        />
+        <Stack.Screen
+          name="Tabs"
+          component={BottomNavigation}
+          options={{ headerShown: false, animation: "fade_from_bottom" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

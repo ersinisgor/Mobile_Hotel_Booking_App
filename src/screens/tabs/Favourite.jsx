@@ -2,14 +2,14 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const Home = () => {
+const Favourite = () => {
   return (
     <SafeAreaView>
-      <Text>Home</Text>
+      <Text>Favourite</Text>
     </SafeAreaView>
   );
 };
 
-export default Home;
+export default Favourite;
 
 const styles = StyleSheet.create({});
