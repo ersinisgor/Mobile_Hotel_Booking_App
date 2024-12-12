@@ -3,6 +3,7 @@ import { Dimensions } from "react-native";
 const WIDTH = Dimensions.get("screen").width;
 const HEIGHT = Dimensions.get("screen").height;
 const PADDING = 26;
+const PADDING_SM = 15;
 
 const COLORS = {
   primary: "#238C98",
@@ -12,4 +13,4 @@ const COLORS = {
   tabsBackground: "rgba(227, 227, 228, 0.19)",
 };
 
-export { COLORS, WIDTH, HEIGHT, PADDING };
+export { COLORS, WIDTH, HEIGHT, PADDING, PADDING_SM };
