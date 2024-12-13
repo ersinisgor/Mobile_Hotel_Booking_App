@@ -13,6 +13,7 @@ const COLORS = {
   inActiveLine: "#E3E3E4",
   inActiveBackground: "rgba(228,228,228,0.3)",
   activeProfile: "#0FA958",
+  cardBackground: "#F5F5F5",
 };
 
 export { COLORS, WIDTH, HEIGHT, PADDING, PADDING_SM };

@@ -244,17 +244,20 @@ const Home = () => {
               ))}
             </View>
 
-            <ScrollView
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              style={styles.hotelsScroll}
-            >
+            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               {getHotels().map(hotel => (
                 <View key={hotel.id} style={styles.hotelWrapper}>
                   {renderHotelCard({ item: hotel })}
                 </View>
               ))}
             </ScrollView>
+            <View style={styles.seeAllContainer}>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("ListHotels")}
+              >
+                <Text style={styles.seeAll}>See all</Text>
+              </TouchableOpacity>
+            </View>
           </View>
 
           {/* Slider */}
@@ -306,7 +309,7 @@ const styles = StyleSheet.create({
   },
   // Main Content
   mainContent: {
-    flex: 1,
+    // flex: 1,
     marginVertical: "auto",
   },
   popularHotels: {
@@ -342,15 +345,14 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
   },
-  hotelsScroll: {
-    // paddingLeft: 16,
-  },
+
   hotelWrapper: {
     marginRight: 16,
+    marginBottom: 8,
   },
   hotelCard: {
     width: WIDTH / 1.7,
-    backgroundColor: "#fff",
+    backgroundColor: COLORS.cardBackground,
     borderRadius: 13,
     shadowColor: "#000",
     shadowOffset: {
@@ -369,7 +371,7 @@ const styles = StyleSheet.create({
     // borderTopRightRadius: 12,
   },
   hotelInfo: {
-    padding: 12,
+    padding: 8,
   },
   hotelName: {
     fontFamily: "Poppins-Medium",
@@ -377,6 +379,12 @@ const styles = StyleSheet.create({
     // fontWeight: "bold",
     marginBottom: 4,
     flexShrink: 1,
+  },
+  hotelRating: {
+    fontSize: 14,
+    // color: "#666",
+    fontFamily: "Poppins-SemiBold",
+    marginLeft: 8,
   },
   hotelLocation: {
     fontSize: 12,
@@ -388,7 +396,8 @@ const styles = StyleSheet.create({
   hotelPrice: {
     fontSize: 12,
     fontFamily: "Poppins-Bold",
-    color: "#007AFF",
+    // color: "#007AFF",
+    color: COLORS.secondary,
     // marginBottom: 4,
   },
   hotelNight: {
@@ -396,12 +405,17 @@ const styles = StyleSheet.create({
     fontFamily: "Poppins-ExtraBold",
     color: COLORS.inActiveFont,
   },
-  hotelRating: {
-    fontSize: 14,
-    // color: "#666",
-    fontFamily: "Poppins-SemiBold",
-    marginLeft: 8,
+
+  seeAllContainer: {
+    alignItems: "flex-end",
+    marginVertical: 8,
   },
+  seeAll: {
+    fontFamily: "Poppins-Medium",
+    color: COLORS.primary,
+    fontSize: 15,
+  },
+
   // Slider
   sliderContainer: {
     height: WIDTH / 3,

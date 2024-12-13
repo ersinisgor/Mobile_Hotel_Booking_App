@@ -7,6 +7,7 @@ import Introduction from "../screens/Introduction";
 import Signup from "../screens/auth/Signup";
 import BottomNavigation from "./BottomNavigation";
 import EditProfile from "../screens/EditProfile";
+import ListHotels from "../screens/ListHotels";
 
 const Stack = createStackNavigator();
 
@@ -56,6 +57,18 @@ const MainNavigation = () => {
         <Stack.Screen
           name="EditProfile"
           component={EditProfile}
+          options={{
+            title: "",
+            headerStyle: {
+              elevation: 0,
+              shadowOpacity: 0,
+              borderBottomWidth: 0,
+            },
+          }}
+        />
+        <Stack.Screen
+          name="ListHotels"
+          component={ListHotels}
           options={{
             title: "",
             headerStyle: {
