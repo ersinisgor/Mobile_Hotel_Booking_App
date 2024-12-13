@@ -86,6 +86,76 @@ const Home = () => {
     },
   ];
 
+  const recomendedHotels = [
+    {
+      id: "1",
+      name: "Estabeez",
+      location: "Ikoyi, Lagos",
+      price: "122,000",
+      rating: "4.1",
+      image: require("../../../assets/images/slider8.jpg"),
+    },
+    {
+      id: "2",
+      name: "Willmart",
+      location: "Izmir, Turkey",
+      price: "140,000",
+      rating: "4.8",
+      image: require("../../../assets/images/slider4.jpg"),
+    },
+    {
+      id: "3",
+      name: "Saragoza",
+      location: "Pukhet, Tailand",
+      price: "25,000",
+      rating: "3.9",
+      image: require("../../../assets/images/slider3.jpg"),
+    },
+    {
+      id: "4",
+      name: "The pheels",
+      location: "Ajah, Lagos",
+      price: "25,000",
+      rating: "4.5",
+      image: require("../../../assets/images/slider1.jpg"),
+    },
+  ];
+
+  const popularHotels = [
+    {
+      id: "1",
+      name: "Willmart",
+      location: "Izmir, Turkey",
+      price: "140,000",
+      rating: "4.8",
+      image: require("../../../assets/images/slider4.jpg"),
+    },
+    {
+      id: "2",
+      name: "The pheels",
+      location: "Ajah, Lagos",
+      price: "25,000",
+      rating: "4.5",
+      image: require("../../../assets/images/slider1.jpg"),
+    },
+    {
+      id: "3",
+      name: "Estabeez",
+      location: "Ikoyi, Lagos",
+      price: "122,000",
+      rating: "4.1",
+      image: require("../../../assets/images/slider8.jpg"),
+    },
+    {
+      id: "4",
+      name: "Saragoza",
+      location: "Pukhet, Tailand",
+      price: "25,000",
+      rating: "3.9",
+      image: require("../../../assets/images/slider3.jpg"),
+    },
+  ];
+
   const renderHotelCard = ({ item }) => (
     <TouchableOpacity style={styles.hotelCard}>
       <Image source={item.image} style={styles.hotelImage} resizeMode="cover" />
@@ -119,6 +189,21 @@ const Home = () => {
     </TouchableOpacity>
   );
 
+  const getHotels = () => {
+    switch (activeCategory) {
+      case "Near Me":
+        return nearbyHotels;
+      case "Recommended":
+        return recomendedHotels;
+      case "Popular":
+        return popularHotels;
+      default:
+        return [];
+    }
+  };
+
+  const categories = ["Near Me", "Recommended", "Popular"];
+
   return (
     <SafeAreaView style={styles.container} edges={["top", "left", "right"]}>
       <View style={styles.viewContainer}>
@@ -138,55 +223,25 @@ const Home = () => {
           <View style={styles.mainContent}>
             {/* Categories */}
             <View style={styles.categories}>
-              <TouchableOpacity
-                style={[
-                  styles.category,
-                  activeCategory === "Near Me" && styles.categoryActive,
-                ]}
-                onPress={() => handleCategoryChange("Near Me")}
-              >
-                <Text
+              {categories.map(category => (
+                <TouchableOpacity
+                  key={category}
                   style={[
-                    styles.categoryText,
-                    activeCategory === "Near Me" && styles.categoryTextActive,
+                    styles.category,
+                    activeCategory === category && styles.categoryActive,
                   ]}
+                  onPress={() => handleCategoryChange(category)}
                 >
-                  Near Me
-                </Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={[
-                  styles.category,
-                  activeCategory === "Recommended" && styles.categoryActive,
-                ]}
-                onPress={() => handleCategoryChange("Recommended")}
-              >
-                <Text
-                  style={[
-                    styles.categoryText,
-                    activeCategory === "Recommended" &&
-                      styles.categoryTextActive,
-                  ]}
-                >
-                  Recommended
-                </Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={[
-                  styles.category,
-                  activeCategory === "Popular" && styles.categoryActive,
-                ]}
-                onPress={() => handleCategoryChange("Popular")}
-              >
-                <Text
-                  style={[
-                    styles.categoryText,
-                    activeCategory === "Popular" && styles.categoryTextActive,
-                  ]}
-                >
-                  Popular
-                </Text>
-              </TouchableOpacity>
+                  <Text
+                    style={[
+                      styles.categoryText,
+                      activeCategory === category && styles.categoryTextActive,
+                    ]}
+                  >
+                    {category}
+                  </Text>
+                </TouchableOpacity>
+              ))}
             </View>
 
             <ScrollView
@@ -194,7 +249,7 @@ const Home = () => {
               showsHorizontalScrollIndicator={false}
               style={styles.hotelsScroll}
             >
-              {nearbyHotels.map(hotel => (
+              {getHotels().map(hotel => (
                 <View key={hotel.id} style={styles.hotelWrapper}>
                   {renderHotelCard({ item: hotel })}
                 </View>
