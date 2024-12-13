@@ -166,14 +166,16 @@ const Home = () => {
           </Text>
           <Text style={styles.hotelRating}>⭐ {item.rating}</Text>
         </View>
-        <Text style={styles.hotelLocation}>
-          <MaterialIcons
-            name="location-on"
-            size={14}
-            color={COLORS.inActiveFont}
-          />
-          {item.location}
-        </Text>
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <Text style={styles.hotelLocation}>
+            <MaterialIcons
+              name="location-on"
+              size={14}
+              color={COLORS.inActiveFont}
+            />
+            {item.location}
+          </Text>
+        </View>
         <View
           style={{
             flexDirection: "row",
@@ -349,6 +351,7 @@ const styles = StyleSheet.create({
   hotelWrapper: {
     marginRight: 16,
     marginBottom: 8,
+    marginLeft: 8,
   },
   hotelCard: {
     width: WIDTH / 1.7,
