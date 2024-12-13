@@ -10,7 +10,6 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import PagerView from "react-native-pager-view";
 import {
   MaterialIcons,
   MaterialCommunityIcons,
@@ -19,6 +18,7 @@ import {
 import { COLORS, PADDING, PADDING_SM, WIDTH } from "../../utils/constants";
 import { useNavigation } from "@react-navigation/native";
 import { auth } from "../../../firebase";
+import Slider from "../../components/Slider";
 
 const Home = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -98,66 +98,12 @@ const Home = () => {
 
           {/* Slider */}
           <View style={styles.sliderContainer}>
-            <PagerView
-              style={styles.pagerView}
-              initialPage={1}
-              pageMargin={PADDING_SM}
-              onPageSelected={handleSlideChange}
-            >
-              <View key="1">
-                <Image
-                  source={require("../../../assets/images/slider1.jpg")}
-                  style={styles.sliderImage}
-                />
-                <View style={styles.sliderTextContainer}>
-                  <Text style={styles.sliderTextSemibold}>Last-minute</Text>
-                  <Text style={styles.sliderTextbold}>
-                    weekend<Text style={styles.sliderText}> deals</Text>
-                  </Text>
-                  {/* <Text style={styles.sliderText}>first booking</Text> */}
-                </View>
-              </View>
-              <View key="2">
-                <Image
-                  source={require("../../../assets/images/slider8.jpg")}
-                  style={styles.sliderImage}
-                />
-                <View style={styles.sliderTextContainer}>
-                  <Text style={styles.sliderTextSemibold}>Get</Text>
-                  <Text style={styles.sliderTextbold}>
-                    10% OFF<Text style={styles.sliderText}> on your</Text>
-                  </Text>
-                  <Text style={styles.sliderText}>first booking</Text>
-                </View>
-              </View>
-              <View key="3">
-                <Image
-                  source={require("../../../assets/images/slider5.jpg")}
-                  style={styles.sliderImage}
-                />
-                <View style={styles.sliderTextContainer}>
-                  <Text style={styles.sliderTextSemibold}>Planing</Text>
-                  <Text style={styles.sliderText}>
-                    a new <Text style={styles.sliderTextbold}>Escape?</Text>
-                  </Text>
-                  <Text style={styles.sliderText}>Let's explore</Text>
-                </View>
-              </View>
-            </PagerView>
-
-            <View style={styles.dotsContainer}>
-              {[0, 1, 2].map(index => (
-                <View
-                  key={index}
-                  style={[
-                    styles.dot,
-                    activeSlide === index
-                      ? styles.activeDot
-                      : styles.inactiveDot,
-                  ]}
-                />
-              ))}
-            </View>
+            <Slider
+              styles={styles}
+              activeSlide={activeSlide}
+              handleSlideChange={handleSlideChange}
+              PADDING_SM={PADDING_SM}
+            />
           </View>
         </View>
 
@@ -301,59 +247,7 @@ const styles = StyleSheet.create({
     height: WIDTH / 3,
     marginBottom: PADDING_SM,
   },
-  pagerView: {
-    flex: 1,
-  },
-  sliderImage: {
-    width: "100%",
-    height: "100%",
-    resizeMode: "cover",
-    borderRadius: 10,
-  },
-  sliderTextContainer: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    paddingVertical: 8,
-    paddingHorizontal: PADDING_SM,
-    backgroundColor: "rgba(0,0,0,0.4)",
-    borderRadius: 10,
-  },
-  sliderTextSemibold: {
-    color: "#fff",
-    fontSize: 20,
-    fontFamily: "Poppins-SemiBold",
-  },
-  sliderTextbold: {
-    color: "#fff",
-    fontSize: 22,
-    fontFamily: "Poppins-Bold",
-  },
-  sliderText: {
-    color: "#fff",
-    fontSize: 20,
-    fontFamily: "Poppins-Medium",
-  },
-  dotsContainer: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 10,
-  },
-  dot: {
-    width: 10,
-    height: 10,
-    borderRadius: 5,
-    marginHorizontal: 5,
-  },
-  activeDot: {
-    backgroundColor: COLORS.primary,
-  },
-  inactiveDot: {
-    backgroundColor: COLORS.inActiveLine,
-  },
+
   // Hamburger Menu
   menu: {
     position: "absolute",
