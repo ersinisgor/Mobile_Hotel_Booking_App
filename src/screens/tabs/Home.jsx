@@ -207,7 +207,7 @@ const Home = () => {
   return (
     <SafeAreaView style={styles.container} edges={["top", "left", "right"]}>
       <View style={styles.viewContainer}>
-        <View>
+        <View style={{ marginTop: PADDING_SM }}>
           <TouchableOpacity onPress={toggleMenu}>
             <MaterialIcons name="menu" size={24} color="#000" />
           </TouchableOpacity>
@@ -312,11 +312,11 @@ const styles = StyleSheet.create({
     // flex: 1,
     marginVertical: "auto",
   },
-  popularHotels: {
-    fontFamily: "Poppins-Medium",
-    fontSize: 16,
-    marginBottom: PADDING_SM,
-  },
+  // popularHotels: {
+  //   fontFamily: "Poppins-Medium",
+  //   fontSize: 16,
+  //   marginBottom: PADDING_SM,
+  // },
   categories: {
     flexDirection: "row",
     paddingHorizontal: PADDING_SM,
@@ -414,6 +414,7 @@ const styles = StyleSheet.create({
     fontFamily: "Poppins-Medium",
     color: COLORS.primary,
     fontSize: 15,
+    marginRight: PADDING_SM,
   },
 
   // Slider

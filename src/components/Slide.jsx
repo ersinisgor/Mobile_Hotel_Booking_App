@@ -34,22 +34,22 @@ const styles = StyleSheet.create({
     bottom: 0,
     paddingVertical: 8,
     paddingHorizontal: PADDING_SM,
-    backgroundColor: "rgba(0,0,0,0.4)",
+    backgroundColor: "rgba(0,0,0,0.3)",
     borderRadius: 10,
   },
   sliderTextSemibold: {
     color: "#fff",
-    fontSize: 20,
+    fontSize: 18,
     fontFamily: "Poppins-SemiBold",
   },
   sliderTextbold: {
     color: "#fff",
-    fontSize: 22,
+    fontSize: 20,
     fontFamily: "Poppins-Bold",
   },
   sliderText: {
     color: "#fff",
-    fontSize: 20,
+    fontSize: 18,
     fontFamily: "Poppins-Medium",
   },
 });
