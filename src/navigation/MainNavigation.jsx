@@ -8,7 +8,6 @@ import Signup from "../screens/auth/Signup";
 import BottomNavigation from "./BottomNavigation";
 import EditProfile from "../screens/EditProfile";
 import ListHotels from "../screens/ListHotels";
-import HotelDetails from "../screens/HotelDetails";
 
 const Stack = createStackNavigator();
 

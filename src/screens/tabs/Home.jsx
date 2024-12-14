@@ -21,6 +21,11 @@ import { auth } from "../../../firebase";
 import Slider from "../../components/Slider";
 import HomeHeader from "../../components/HomeHeader";
 import HamburgerMenu from "../../components/HamburgerMenu";
+import {
+  popularHotels,
+  recomendedHotels,
+  nearbyHotels,
+} from "../../utils/DummyDatas";
 
 const Home = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -50,111 +55,6 @@ const Home = () => {
       console.error("Logout error:", error);
     }
   };
-
-  const nearbyHotels = [
-    {
-      id: "1",
-      name: "The pheels",
-      location: "Ajah, Lagos",
-      price: "25,000",
-      rating: "4.5",
-      image: require("../../../assets/images/slider1.jpg"),
-    },
-    {
-      id: "2",
-      name: "Estabeez",
-      location: "Ikoyi, Lagos",
-      price: "122,000",
-      rating: "4.1",
-      image: require("../../../assets/images/slider8.jpg"),
-    },
-    {
-      id: "3",
-      name: "Saragoza",
-      location: "Pukhet, Tailand",
-      price: "25,000",
-      rating: "3.9",
-      image: require("../../../assets/images/slider3.jpg"),
-    },
-    {
-      id: "4",
-      name: "Willmart",
-      location: "Izmir, Turkey",
-      price: "140,000",
-      rating: "4.8",
-      image: require("../../../assets/images/slider4.jpg"),
-    },
-  ];
-
-  const recomendedHotels = [
-    {
-      id: "1",
-      name: "Estabeez",
-      location: "Ikoyi, Lagos",
-      price: "122,000",
-      rating: "4.1",
-      image: require("../../../assets/images/slider8.jpg"),
-    },
-    {
-      id: "2",
-      name: "Willmart",
-      location: "Izmir, Turkey",
-      price: "140,000",
-      rating: "4.8",
-      image: require("../../../assets/images/slider4.jpg"),
-    },
-    {
-      id: "3",
-      name: "Saragoza",
-      location: "Pukhet, Tailand",
-      price: "25,000",
-      rating: "3.9",
-      image: require("../../../assets/images/slider3.jpg"),
-    },
-    {
-      id: "4",
-      name: "The pheels",
-      location: "Ajah, Lagos",
-      price: "25,000",
-      rating: "4.5",
-      image: require("../../../assets/images/slider1.jpg"),
-    },
-  ];
-
-  const popularHotels = [
-    {
-      id: "1",
-      name: "Willmart",
-      location: "Izmir, Turkey",
-      price: "140,000",
-      rating: "4.8",
-      image: require("../../../assets/images/slider4.jpg"),
-    },
-    {
-      id: "2",
-      name: "The pheels",
-      location: "Ajah, Lagos",
-      price: "25,000",
-      rating: "4.5",
-      image: require("../../../assets/images/slider1.jpg"),
-    },
-    {
-      id: "3",
-      name: "Estabeez",
-      location: "Ikoyi, Lagos",
-      price: "122,000",
-      rating: "4.1",
-      image: require("../../../assets/images/slider8.jpg"),
-    },
-    {
-      id: "4",
-      name: "Saragoza",
-      location: "Pukhet, Tailand",
-      price: "25,000",
-      rating: "3.9",
-      image: require("../../../assets/images/slider3.jpg"),
-    },
-  ];
 
   const renderHotelCard = ({ item }) => (
     <TouchableOpacity style={styles.hotelCard}>
