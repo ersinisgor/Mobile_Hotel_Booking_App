@@ -8,6 +8,7 @@ import Signup from "../screens/auth/Signup";
 import BottomNavigation from "./BottomNavigation";
 import EditProfile from "../screens/EditProfile";
 import ListHotels from "../screens/ListHotels";
+import HotelDetails from "../screens/HotelDetails";
 
 const Stack = createStackNavigator();
 
@@ -23,12 +24,13 @@ const MainNavigation = () => {
         <Stack.Screen
           name="Introduction"
           component={Introduction}
-          options={{ headerShown: false }}
+          options={{ headerShown: false, animation: "fade_from_bottom" }}
         />
         <Stack.Screen
           name="Login"
           component={Login}
           options={{
+            animation: "fade_from_bottom",
             title: "",
             headerStyle: {
               elevation: 0,
@@ -41,6 +43,7 @@ const MainNavigation = () => {
           name="Signup"
           component={Signup}
           options={{
+            animation: "fade_from_bottom",
             title: "",
             headerStyle: {
               elevation: 0,
@@ -58,6 +61,7 @@ const MainNavigation = () => {
           name="EditProfile"
           component={EditProfile}
           options={{
+            animation: "fade_from_bottom",
             title: "",
             headerStyle: {
               elevation: 0,
@@ -70,6 +74,7 @@ const MainNavigation = () => {
           name="ListHotels"
           component={ListHotels}
           options={{
+            animation: "fade_from_bottom",
             title: "",
             headerStyle: {
               elevation: 0,
