@@ -39,7 +39,7 @@ const HomeHeader = () => {
           </Pressable>
         </View>
         <View style={styles.filterIcon}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => {}}>
             <MaterialIcons
               name="filter-list"
               size={24}

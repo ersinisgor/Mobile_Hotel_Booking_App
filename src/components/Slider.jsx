@@ -3,7 +3,7 @@ import { StyleSheet, View } from "react-native";
 import PagerView from "react-native-pager-view";
 import Slide from "./Slide";
 import { COLORS, PADDING_SM } from "../utils/constants";
-import { slidesData } from "../utils/DummyDatas";
+import { slidesData } from "../utils/dummyDatas";
 
 const Slider = ({ activeSlide, handleSlideChange }) => {
   return (

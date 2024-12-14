@@ -25,7 +25,9 @@ import {
   popularHotels,
   recomendedHotels,
   nearbyHotels,
-} from "../../utils/DummyDatas";
+  hotels,
+} from "../../utils/dummyDatas";
+// import { shuffleArray } from "../utils/helpers";
 
 const Home = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -58,7 +60,11 @@ const Home = () => {
 
   const renderHotelCard = ({ item }) => (
     <TouchableOpacity style={styles.hotelCard}>
-      <Image source={item.image} style={styles.hotelImage} resizeMode="cover" />
+      <Image
+        source={item.images[0]}
+        style={styles.hotelImage}
+        resizeMode="cover"
+      />
       <View style={styles.hotelInfo}>
         <View style={styles.hotelHeader}>
           <Text style={styles.hotelName} numberOfLines={1}>
@@ -94,7 +100,7 @@ const Home = () => {
   const getHotels = () => {
     switch (activeCategory) {
       case "Near Me":
-        return nearbyHotels;
+        return hotels;
       case "Recommended":
         return recomendedHotels;
       case "Popular":
@@ -146,6 +152,7 @@ const Home = () => {
               ))}
             </View>
 
+            {/* Horizontal scroll */}
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               {getHotels().map(hotel => (
                 <View key={hotel.id} style={styles.hotelWrapper}>
