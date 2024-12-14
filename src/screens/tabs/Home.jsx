@@ -6,7 +6,7 @@ import {
   Image,
   Text,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { MaterialIcons } from "@expo/vector-icons";
 import {
@@ -21,23 +21,30 @@ import { auth } from "../../../firebase";
 import Slider from "../../components/Slider";
 import HomeHeader from "../../components/HomeHeader";
 import HamburgerMenu from "../../components/HamburgerMenu";
-import {
-  popularHotels,
-  recomendedHotels,
-  nearbyHotels,
-  hotels,
-} from "../../utils/dummyDatas";
-// import { shuffleArray } from "../utils/helpers";
+import { hotels } from "../../utils/dummyDatas";
+import { shuffleArray } from "../../utils/helpers";
 
 const Home = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [activeSlide, setActiveSlide] = useState(1);
   const [activeCategory, setActiveCategory] = useState("Near Me");
+  const [displayHotels, setDisplayHotels] = useState(hotels);
+  const scrollViewRef = useRef(null);
   const navigation = useNavigation();
+
+  useEffect(() => {
+    setDisplayHotels(displayHotels);
+  }, [activeCategory]);
 
   const handleCategoryChange = category => {
     setActiveCategory(category);
+    const shuffledHotels =
+      category === "Near Me" ? hotels : shuffleArray(hotels);
+    setDisplayHotels(shuffledHotels);
+
+    // Scroll to the top of the ScrollView
+    scrollViewRef.current?.scrollTo({ x: 0, y: 0, animated: true });
   };
 
   const handleSlideChange = event => {
@@ -97,19 +104,6 @@ const Home = () => {
     </TouchableOpacity>
   );
 
-  const getHotels = () => {
-    switch (activeCategory) {
-      case "Near Me":
-        return hotels;
-      case "Recommended":
-        return recomendedHotels;
-      case "Popular":
-        return popularHotels;
-      default:
-        return [];
-    }
-  };
-
   const categories = ["Near Me", "Recommended", "Popular"];
 
   return (
@@ -153,8 +147,12 @@ const Home = () => {
             </View>
 
             {/* Horizontal scroll */}
-            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-              {getHotels().map(hotel => (
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              ref={scrollViewRef}
+            >
+              {displayHotels.map(hotel => (
                 <View key={hotel.id} style={styles.hotelWrapper}>
                   {renderHotelCard({ item: hotel })}
                 </View>
