@@ -135,7 +135,7 @@ const AuthForm = ({ type }) => {
           <View style={styles.iconTextContainer}>
             <Pressable style={styles.iconFrame} onPress={() => {}}>
               <Image
-                source={require("../../assets/images/google_icon.png")}
+                source={require("../../assets/google_icon.png")}
                 style={{ width: 24, height: 24 }}
               />
             </Pressable>

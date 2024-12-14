@@ -14,7 +14,7 @@ const Introduction = () => {
   const navigation = useNavigation();
   return (
     <ImageBackground
-      source={require("../../assets/images/intro.jpg")}
+      source={require("../../assets/intro.jpg")}
       style={styles.background}
     >
       <StatusBar barStyle="light-content" translucent hidden={true} />

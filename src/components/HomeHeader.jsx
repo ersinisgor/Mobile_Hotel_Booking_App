@@ -17,7 +17,7 @@ const HomeHeader = () => {
       <View style={styles.profileContainer}>
         <View style={styles.imageContainer}>
           <Image
-            source={require("../../assets/images/profile.jpg")}
+            source={require("../../assets/profiles/profile16.jpg")}
             style={styles.profileImage}
           />
           <View style={styles.badge}></View>
