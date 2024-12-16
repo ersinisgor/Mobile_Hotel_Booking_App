@@ -43,7 +43,7 @@ const hotels = [
       {
         user: "Lisa Harper",
         comment: "The ski instructors were top-notch.",
-        rating: 5,
+        rating: 5.0,
         date: "Jul 10, 2023",
         avatar: require("../../assets/profiles/profile8.jpg"),
       },
@@ -57,7 +57,7 @@ const hotels = [
       {
         user: "Alex Rivera",
         comment: "The private beach was a dream come true.",
-        rating: 5,
+        rating: 5.0,
         date: "Sep 5, 2023",
         avatar: require("../../assets/profiles/profile10.jpg"),
       },
@@ -78,7 +78,7 @@ const hotels = [
       {
         user: "Ella Fitzgerald",
         comment: "Best snorkeling experience ever.",
-        rating: 5,
+        rating: 5.0,
         date: "Dec 12, 2023",
         avatar: require("../../assets/profiles/profile11.jpg"),
       },
@@ -120,7 +120,7 @@ const hotels = [
     reviews: [
       {
         user: "Sarah Lee",
-        rating: 5,
+        rating: 5.0,
         comment: "Best skiing experience ever!",
         date: "Feb 10, 2023",
         avatar: require("../../assets/profiles/profile6.jpg"),
@@ -135,7 +135,7 @@ const hotels = [
       {
         user: "Ben Carter",
         comment: "Great ski slopes and cozy fireplaces.",
-        rating: 5,
+        rating: 5.0,
         date: "Apr 22, 2023",
         avatar: require("../../assets/profiles/profile8.jpg"),
       },
@@ -213,7 +213,7 @@ const hotels = [
       {
         user: "David Clarke",
         comment: "The most luxurious stay I’ve ever had.",
-        rating: 5,
+        rating: 5.0,
         date: "Mar 17, 2023",
         avatar: require("../../assets/profiles/profile5.jpg"),
       },
@@ -227,7 +227,7 @@ const hotels = [
       {
         user: "Oliver King",
         comment: "A must-visit in Dubai.",
-        rating: 5,
+        rating: 5.0,
         date: "May 30, 2023",
         avatar: require("../../assets/profiles/profile8.jpg"),
       },
@@ -241,7 +241,7 @@ const hotels = [
       {
         user: "Ethan Lopez",
         comment: "Loved the Arabic-themed dining options.",
-        rating: 5,
+        rating: 5.0,
         date: "Jul 7, 2023",
         avatar: require("../../assets/profiles/profile9.jpg"),
       },
@@ -363,7 +363,7 @@ const hotels = [
       {
         user: "Sophia Bennett",
         comment: "Perfect location for exploring NYC.",
-        rating: 5,
+        rating: 5.0,
         date: "Aug 5, 2023",
         avatar: require("../../assets/profiles/profile3.jpg"),
       },
@@ -391,7 +391,7 @@ const hotels = [
       {
         user: "Olivia White",
         comment: "The breakfast buffet was excellent.",
-        rating: 5,
+        rating: 5.0,
         date: "Dec 15, 2023",
         avatar: require("../../assets/profiles/profile12.jpg"),
       },
@@ -428,7 +428,7 @@ const hotels = [
     reviews: [
       {
         user: "Sophia Martin",
-        rating: 5,
+        rating: 5.0,
         comment: "The lake view was breathtaking!",
         date: "Jan 12, 2023",
         avatar: require("../../assets/profiles/profile1.jpg"),
@@ -443,7 +443,7 @@ const hotels = [
       {
         user: "Emma Hill",
         comment: "Best ski resort I’ve ever stayed at.",
-        rating: 5,
+        rating: 5.0,
         date: "Mar 8, 2023",
         avatar: require("../../assets/profiles/profile3.jpg"),
       },
@@ -464,7 +464,7 @@ const hotels = [
       {
         user: "Ava Harris",
         comment: "The spa was perfect after a long day of skiing.",
-        rating: 5,
+        rating: 5.0,
         date: "Jun 1, 2023",
         avatar: require("../../assets/profiles/profile6.jpg"),
       },
@@ -547,7 +547,7 @@ const hotels = [
       {
         user: "Emma Hill",
         comment: "Best ski resort I’ve ever stayed at.",
-        rating: 5,
+        rating: 5.0,
         date: "Mar 9, 2023",
         avatar: require("../../assets/profiles/profile3.jpg"),
       },
@@ -568,7 +568,7 @@ const hotels = [
       {
         user: "Ava Harris",
         comment: "The spa was perfect after a long day of skiing.",
-        rating: 5,
+        rating: 5.0,
         date: "Jun 3, 2023",
         avatar: require("../../assets/profiles/profile6.jpg"),
       },
@@ -596,7 +596,7 @@ const hotels = [
       {
         user: "Jack Williams",
         comment: "Amazing views from every room.",
-        rating: 5,
+        rating: 5.0,
         date: "Oct 10, 2023",
         avatar: require("../../assets/profiles/profile10.jpg"),
       },
@@ -642,7 +642,7 @@ const hotels = [
     reviews: [
       {
         user: "Laura Smith",
-        rating: 5,
+        rating: 5.0,
         comment: "Pure paradise on earth!",
         date: "Jan 15, 2023",
         avatar: require("../../assets/profiles/profile1.jpg"),
@@ -657,7 +657,7 @@ const hotels = [
       {
         user: "Sophia Bennett",
         comment: "Perfect location for exploring NYC.",
-        rating: 5,
+        rating: 5.0,
         date: "Mar 25, 2023",
         avatar: require("../../assets/profiles/profile3.jpg"),
       },
@@ -685,7 +685,7 @@ const hotels = [
       {
         user: "Olivia White",
         comment: "The breakfast buffet was excellent.",
-        rating: 5,
+        rating: 5.0,
         date: "Jul 20, 2023",
         avatar: require("../../assets/profiles/profile7.jpg"),
       },
@@ -783,7 +783,7 @@ const hotels = [
       {
         user: "David Clarke",
         comment: "The most luxurious stay I’ve ever had.",
-        rating: 5,
+        rating: 5.0,
         date: "Mar 5, 2023",
         avatar: require("../../assets/profiles/profile14.jpg"),
       },
@@ -797,7 +797,7 @@ const hotels = [
       {
         user: "Oliver King",
         comment: "A must-visit in Dubai.",
-        rating: 5,
+        rating: 5.0,
         date: "May 1, 2023",
         avatar: require("../../assets/profiles/profile16.jpg"),
       },
@@ -811,7 +811,7 @@ const hotels = [
       {
         user: "Ethan Lopez",
         comment: "Loved the Arabic-themed dining options.",
-        rating: 5,
+        rating: 5.0,
         date: "Jul 8, 2023",
         avatar: require("../../assets/profiles/profile3.jpg"),
       },
@@ -848,7 +848,7 @@ const hotels = [
     reviews: [
       {
         user: "Alice Turner",
-        rating: 5,
+        rating: 5.0,
         comment: "The view was spectacular!",
         date: "Jan 22, 2023",
         avatar: require("../../assets/profiles/profile4.jpg"),
@@ -877,7 +877,7 @@ const hotels = [
       {
         user: "Ella Fitzgerald",
         comment: "Best snorkeling experience ever.",
-        rating: 5,
+        rating: 5.0,
         date: "May 6, 2023",
         avatar: require("../../assets/profiles/profile8.jpg"),
       },
@@ -905,7 +905,7 @@ const hotels = [
       {
         user: "Ben Carter",
         comment: "Great ski slopes and cozy fireplaces.",
-        rating: 5,
+        rating: 5.0,
         date: "Sep 9, 2023",
         avatar: require("../../assets/profiles/profile12.jpg"),
       },
@@ -958,7 +958,7 @@ const hotels = [
       {
         user: "Anna Michaels",
         comment: "Loved the infinity pool and the view was stunning!",
-        rating: 5,
+        rating: 5.0,
         date: "Jan 12, 2024",
         avatar: require("../../assets/profiles/profile15.jpg"),
       },
@@ -972,7 +972,7 @@ const hotels = [
       {
         user: "Sophia Lee",
         comment: "Perfect for a romantic getaway.",
-        rating: 5,
+        rating: 5.0,
         date: "Mar 15, 2024",
         avatar: require("../../assets/profiles/profile1.jpg"),
       },
@@ -986,14 +986,14 @@ const hotels = [
       {
         user: "Maria Alvarez",
         comment: "The spa treatments were heavenly!",
-        rating: 5,
+        rating: 5.0,
         date: "May 8, 2024",
         avatar: require("../../assets/profiles/profile3.jpg"),
       },
       {
         user: "David Clarke",
         comment: "The most luxurious stay I’ve ever had.",
-        rating: 5,
+        rating: 5.0,
         date: "Jun 19, 2024",
         avatar: require("../../assets/profiles/profile4.jpg"),
       },
@@ -1007,7 +1007,7 @@ const hotels = [
       {
         user: "Oliver King",
         comment: "A must-visit in Dubai.",
-        rating: 5,
+        rating: 5.0,
         date: "Aug 13, 2024",
         avatar: require("../../assets/profiles/profile6.jpg"),
       },
@@ -1021,7 +1021,7 @@ const hotels = [
       {
         user: "Ethan Lopez",
         comment: "Loved the Arabic-themed dining options.",
-        rating: 5,
+        rating: 5.0,
         date: "Oct 9, 2024",
         avatar: require("../../assets/profiles/profile8.jpg"),
       },

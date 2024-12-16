@@ -13,6 +13,7 @@ const COLORS = {
   inActiveLine: "#E3E3E4",
   inActiveBackground: "rgba(228,228,228,0.3)",
   activeProfile: "#0FA958",
+  grayFont: "#4e4e4e",
   cardBackground: "#F5F5F5",
 };
 

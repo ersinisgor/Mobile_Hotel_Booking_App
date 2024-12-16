@@ -1,4 +1,3 @@
-// HotelDetails.js
 import React, { useState } from "react";
 import {
   StyleSheet,
@@ -8,44 +7,11 @@ import {
   TouchableOpacity,
   ScrollView,
   FlatList,
-  Dimensions,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 import { useNavigation, useRoute } from "@react-navigation/native";
-
-const SCREEN_WIDTH = Dimensions.get("window").width;
-
-// Dummy data for reviews
-const dummyReviews = [
-  {
-    id: "1",
-    user: "Atiba Valerie",
-    date: "May 4, 2023",
-    rating: 5,
-    comment: "Quite impressed, I would definitely come back",
-    avatar: "https://example.com/avatar1.jpg",
-  },
-  {
-    id: "2",
-    user: "Angelo Phoebe",
-    date: "April 17, 2023",
-    rating: 4,
-    comment:
-      "The rooms are comfy and the environment is so calm if you need time away",
-    avatar: "https://example.com/avatar2.jpg",
-  },
-  {
-    id: "3",
-    user: "Davidson Jr",
-    date: "Feb 17, 2023",
-    rating: 5,
-    comment:
-      "I dont often recommend or give suggestions about anything to people but try this.",
-    avatar: "https://example.com/avatar3.jpg",
-  },
-  // Add more reviews if needed
-];
+import { COLORS, HEIGHT, PADDING_SM, WIDTH } from "../utils/constants";
 
 const HotelDetails = () => {
   const navigation = useNavigation();
@@ -85,8 +51,11 @@ const HotelDetails = () => {
   );
 
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
+    <SafeAreaView style={styles.container} edges={["bottom", "top"]}>
+      <ScrollView
+        style={styles.scrollView}
+        showsVerticalScrollIndicator={false}
+      >
         {/* Hotel Image Section */}
         <View style={styles.imageContainer}>
           <Image
@@ -109,7 +78,11 @@ const HotelDetails = () => {
         <View style={styles.infoContainer}>
           <Text style={styles.hotelName}>{hotel.name}</Text>
           <View style={styles.locationContainer}>
-            <MaterialIcons name="location-on" size={16} color="#666" />
+            <MaterialIcons
+              name="location-on"
+              size={16}
+              color={COLORS.grayFont}
+            />
             <Text style={styles.location}>{hotel.longAddress}</Text>
           </View>
 
@@ -125,7 +98,13 @@ const HotelDetails = () => {
             <View style={styles.facilitiesContainer}>
               {facilities.map(facility => (
                 <View key={facility.id} style={styles.facilityItem}>
-                  <MaterialIcons name={facility.icon} size={24} color="#666" />
+                  <View style={styles.facilityIconContainer}>
+                    <MaterialIcons
+                      name={facility.icon}
+                      size={24}
+                      color={COLORS.primary}
+                    />
+                  </View>
                   <Text style={styles.facilityName}>{facility.name}</Text>
                 </View>
               ))}
@@ -135,13 +114,20 @@ const HotelDetails = () => {
           {/* Reviews Section */}
           <View style={styles.section}>
             <View style={styles.reviewsHeader}>
-              <Text style={styles.sectionTitle}>Reviews</Text>
-              <View style={styles.ratingInfo}>
-                <MaterialIcons name="star" size={16} color="#FFD700" />
-                <Text style={styles.ratingText}>{hotel.rating}</Text>
-                <Text style={styles.reviewCount}>
-                  ({hotel.reviews.length} reviews)
-                </Text>
+              <View style={styles.raviewsTextContainer}>
+                <Text style={styles.reviewsTitle}>Reviews</Text>
+                <View style={styles.ratingInfo}>
+                  <MaterialIcons
+                    name="star"
+                    size={17}
+                    color="#FFD700"
+                    style={{ paddingTop: 2 }}
+                  />
+                  <Text style={styles.ratingText}>{hotel.rating}</Text>
+                  <Text style={styles.reviewCount}>
+                    ({hotel.reviews.length} reviews)
+                  </Text>
+                </View>
               </View>
               <TouchableOpacity onPress={() => setShowReviews(!showReviews)}>
                 <Text style={styles.seeAllButton}>See all</Text>
@@ -157,18 +143,40 @@ const HotelDetails = () => {
                   scrollEnabled={false}
                 />
                 {hotel.reviews.length > 5 && (
-                  <TouchableOpacity
-                    style={[
-                      styles.moreButton,
-                      { opacity: hotel.reviews.length <= 5 ? 0.5 : 1 },
-                    ]}
-                    onPress={() => setShowMoreReviews(!showMoreReviews)}
-                    disabled={hotel.reviews.length <= 5}
+                  <View
+                    style={{
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
                   >
-                    <Text style={styles.moreButtonText}>
-                      {showMoreReviews ? "Show less" : "More"}
-                    </Text>
-                  </TouchableOpacity>
+                    <TouchableOpacity
+                      style={[styles.moreButton]}
+                      onPress={() => setShowMoreReviews(!showMoreReviews)}
+                    >
+                      <View style={styles.moreButtonTextConatiner}>
+                        <Text style={styles.moreButtonText}>
+                          {showMoreReviews ? "Show less" : "More"}
+                        </Text>
+                        {showMoreReviews ? (
+                          <View style={styles.iconContainer}>
+                            <Ionicons
+                              name="chevron-up"
+                              size={22}
+                              color={COLORS.secondary}
+                            />
+                          </View>
+                        ) : (
+                          <View style={styles.iconContainer}>
+                            <Ionicons
+                              name="chevron-down"
+                              size={22}
+                              color={COLORS.secondary}
+                            />
+                          </View>
+                        )}
+                      </View>
+                    </TouchableOpacity>
+                  </View>
                 )}
               </View>
             )}
@@ -194,18 +202,22 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+    paddingHorizontal: PADDING_SM,
   },
   scrollView: {
     flex: 1,
   },
   imageContainer: {
-    width: SCREEN_WIDTH,
-    height: 300,
+    width: WIDTH - PADDING_SM * 2,
+    height: WIDTH - PADDING_SM * 2,
+    marginTop: PADDING_SM,
     position: "relative",
   },
   hotelImage: {
     width: "100%",
     height: "100%",
+    borderRadius: 14,
+    resizeMode: "cover",
   },
   backButton: {
     position: "absolute",
@@ -225,38 +237,37 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
     justifyContent: "center",
     alignItems: "center",
   },
   infoContainer: {
-    padding: 16,
+    paddingVertical: PADDING_SM,
   },
   hotelName: {
-    fontSize: 24,
-    fontWeight: "bold",
+    fontSize: 20,
+    fontFamily: "Poppins-SemiBold",
     marginBottom: 8,
   },
   locationContainer: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 16,
+    marginBottom: 8,
   },
   location: {
     marginLeft: 4,
-    color: "#666",
+    color: COLORS.grayFont,
     fontSize: 14,
   },
   section: {
-    marginTop: 24,
+    marginTop: HEIGHT * 0.02,
   },
   sectionTitle: {
-    fontSize: 18,
-    fontWeight: "bold",
+    fontSize: 16,
+    fontFamily: "Poppins-SemiBold",
     marginBottom: 12,
   },
   description: {
-    color: "#666",
+    color: COLORS.grayFont,
     lineHeight: 20,
   },
   facilitiesContainer: {
@@ -269,92 +280,138 @@ const styles = StyleSheet.create({
     width: "20%",
     marginBottom: 16,
   },
+  facilityIconContainer: {
+    width: 45,
+    height: 45,
+    borderRadius: 10,
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: 0.5,
+    borderColor: COLORS.primary,
+  },
   facilityName: {
     marginTop: 4,
     fontSize: 12,
-    color: "#666",
+    color: COLORS.grayFont,
     textAlign: "center",
   },
   reviewsHeader: {
     flexDirection: "row",
-    alignItems: "center",
     justifyContent: "space-between",
-    marginBottom: 16,
+  },
+  raviewsTextContainer: {
+    flexDirection: "row",
+  },
+  reviewsTitle: {
+    fontFamily: "Poppins-SemiBold",
+    fontSize: 16,
+    marginRight: PADDING_SM,
   },
   ratingInfo: {
     flexDirection: "row",
-    alignItems: "center",
+    paddingTop: 4,
   },
   ratingText: {
     marginLeft: 4,
-    fontWeight: "bold",
+    fontFamily: "Poppins-SemiBold",
+    fontSize: 13,
+    color: COLORS.primary,
   },
   reviewCount: {
-    marginLeft: 4,
-    color: "#666",
+    marginLeft: 8,
+    color: COLORS.inActiveTab,
+    fontFamily: "Poppins-Medium",
+    fontSize: 12,
+    paddingTop: 2,
   },
   seeAllButton: {
-    color: "#2A9D8F",
-    fontWeight: "bold",
+    color: COLORS.primary,
+    fontFamily: "Poppins-Medium",
+    fontSize: 14,
+    lineHeight: 18,
+    paddingTop: 4,
+    flex: 1,
   },
   reviewsContainer: {
-    marginTop: 8,
+    marginTop: PADDING_SM,
   },
   reviewItem: {
-    marginBottom: 16,
-    paddingBottom: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: "#eee",
+    marginBottom: PADDING_SM,
+    backgroundColor: COLORS.cardBackground,
+    borderRadius: 12,
+    padding: PADDING_SM,
   },
   reviewHeader: {
     flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 8,
+    alignItems: "flex-start",
   },
   reviewerAvatar: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    borderWidth: 0.5,
+    borderColor: COLORS.primary,
   },
   reviewerInfo: {
     flex: 1,
     marginLeft: 12,
   },
   reviewerName: {
-    fontWeight: "bold",
+    fontFamily: "Poppins-Medium",
+    fontSize: 15,
+    lineHeight: 20,
   },
   reviewDate: {
-    color: "#666",
+    color: COLORS.inActiveFont,
+    fontFamily: "Poppins-Medium",
     fontSize: 12,
   },
   ratingContainer: {
     flexDirection: "row",
     alignItems: "center",
+    backgroundColor: COLORS.primary,
+    borderRadius: 10,
+    paddingHorizontal: 5,
   },
   rating: {
     marginLeft: 4,
     fontWeight: "bold",
+    color: "#fff",
   },
   reviewComment: {
-    color: "#666",
+    color: COLORS.grayFont,
     lineHeight: 20,
+    marginLeft: 62,
   },
   moreButton: {
-    alignItems: "center",
-    padding: 12,
     marginTop: 8,
+    width: 218,
+    paddingVertical: 8,
+    borderRadius: 12,
+    backgroundColor: "#a8dadc",
   },
   moreButtonText: {
-    color: "#2A9D8F",
-    fontWeight: "bold",
+    textAlign: "center",
+    color: COLORS.secondary,
+    marginRight: 8,
+    fontFamily: "Poppins-Medium",
+    fontSize: 16,
+  },
+  moreButtonTextConatiner: {
+    flexDirection: "row",
+    alignItems: "flex-end",
+    justifyContent: "center",
+  },
+  iconContainer: {
+    marginBottom: 4,
   },
   bottomBar: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    padding: 16,
+    padding: PADDING_SM,
     borderTopWidth: 1,
-    borderTopColor: "#eee",
+    borderTopColor: COLORS.inActiveLine,
     backgroundColor: "#fff",
   },
   priceContainer: {
@@ -362,22 +419,23 @@ const styles = StyleSheet.create({
     alignItems: "baseline",
   },
   price: {
-    fontSize: 20,
-    fontWeight: "bold",
+    fontSize: 18,
+    fontFamily: "Poppins-SemiBold",
   },
   priceUnit: {
     marginLeft: 4,
-    color: "#666",
+    color: COLORS.inActiveFont,
   },
   bookButton: {
-    backgroundColor: "#2A9D8F",
-    paddingHorizontal: 32,
+    backgroundColor: COLORS.primary,
+    paddingHorizontal: 48,
     paddingVertical: 12,
-    borderRadius: 8,
+    borderRadius: 10,
   },
   bookButtonText: {
     color: "#fff",
-    fontWeight: "bold",
+    fontFamily: "Poppins-SemiBold",
+    fontSize: 14,
   },
 });
 
