@@ -111,8 +111,8 @@ const hotels = [
     facilities: [
       "ski",
       "breakfast",
-      "mountain view",
-      "hot tub",
+      "mountain_view",
+      "hot_tub",
       "fireplace",
       "bar",
       "wifi",
@@ -188,7 +188,7 @@ const hotels = [
     longAddress: "99 Main Street, Manhattan, New York, NY, USA",
     facilities: [
       "wifi",
-      "city view",
+      "city_view",
       "bar",
       "meeting",
       "gym",
@@ -416,8 +416,8 @@ const hotels = [
       "Escape to a picturesque lodge by the lake with stunning water views.",
     longAddress: "456 Lakefront Avenue, Geneva, Switzerland",
     facilities: [
-      "lake view",
-      "Restaurant",
+      "lake_view",
+      "restaurant",
       "boat",
       "breakfast",
       "wifi",
@@ -519,14 +519,14 @@ const hotels = [
     facilities: [
       "parking",
       "yoga",
-      "hot tub",
+      "hot_tub",
       "nature",
       "spa",
       "wifi",
       "pool",
       "restaurant",
       "bar",
-      " mountain view",
+      "mountain_view",
       "breakfast",
     ],
     reviews: [
@@ -764,7 +764,7 @@ const hotels = [
     description:
       "A modern, urban hotel with sleek designs and easy access to city attractions.",
     longAddress: "11 Comfort Street, London, UK",
-    facilities: ["wifi", "city view", "bar", "meeting", "gym"],
+    facilities: ["wifi", "city_view", "bar", "meeting", "gym"],
     reviews: [
       {
         user: "Olivia Brown",
@@ -1553,7 +1553,7 @@ const hotels = [
     price: "150,000",
     rating: "4.8",
     description: "A modern city escape located in the heart of Manhattan.",
-    facilities: ["wifi", "restaurant", "gym", "bar", "parking", "city view"],
+    facilities: ["wifi", "restaurant", "gym", "bar", "parking", "city_view"],
     images: [
       require("../../assets/images/image5.jpg"),
       require("../../assets/images/image2.jpg"),
@@ -1839,7 +1839,7 @@ const hotels = [
       "spa",
       "fireplace",
       "parking",
-      "mountain view",
+      "mountain_view",
       "breakfast",
     ],
     images: [

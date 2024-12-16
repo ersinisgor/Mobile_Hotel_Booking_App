@@ -12,6 +12,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { COLORS, HEIGHT, PADDING_SM, WIDTH } from "../utils/constants";
+import { facilities, facilitiesWithIcons } from "../utils/helpers";
 
 const HotelDetails = () => {
   const navigation = useNavigation();
@@ -21,13 +22,13 @@ const HotelDetails = () => {
   const route = useRoute();
   const { hotel } = route.params;
 
-  const facilities = [
-    { id: "1", name: "Wifi", icon: "wifi" },
-    { id: "2", name: "Restaurant", icon: "restaurant" },
-    { id: "3", name: "Bar", icon: "wine-bar" },
-    { id: "4", name: "Pool", icon: "pool" },
-    { id: "5", name: "Gym", icon: "fitness-center" },
-  ];
+  // const facilities = [
+  //   { id: "1", name: "Wifi", icon: "wifi" },
+  //   { id: "2", name: "Restaurant", icon: "restaurant" },
+  //   { id: "3", name: "Bar", icon: "wine-bar" },
+  //   { id: "4", name: "Pool", icon: "pool" },
+  //   { id: "5", name: "Gym", icon: "fitness-center" },
+  // ];
 
   const displayedReviews = showMoreReviews
     ? hotel.reviews.slice(0, 15)
@@ -92,7 +93,7 @@ const HotelDetails = () => {
             <Text style={styles.description}>{hotel.description}</Text>
           </View>
 
-          {/* Facilities Section */}
+          {/* Facilities Section
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Facilities</Text>
             <View style={styles.facilitiesContainer}>
@@ -108,6 +109,30 @@ const HotelDetails = () => {
                   <Text style={styles.facilityName}>{facility.name}</Text>
                 </View>
               ))}
+            </View>
+          </View> */}
+
+          {/* Facilities Section */}
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Facilities</Text>
+            <View style={styles.facilitiesContainer}>
+              {/* Filter facilities based on the current hotel's available facilities */}
+              {facilities
+                .filter(facility => hotel.facilities.includes(facility.name)) // Filter facilities
+                .map(facility => (
+                  <View key={facility.id} style={styles.facilityItem}>
+                    <View style={styles.facilityIconContainer}>
+                      <MaterialIcons
+                        name={facility.icon}
+                        size={24}
+                        color={COLORS.primary}
+                      />
+                    </View>
+                    <Text style={styles.facilityName}>
+                      {facility.displayName}
+                    </Text>
+                  </View>
+                ))}
             </View>
           </View>
 
@@ -190,7 +215,12 @@ const HotelDetails = () => {
           <Text style={styles.price}>$ {hotel.price}</Text>
           <Text style={styles.priceUnit}>/night</Text>
         </View>
-        <TouchableOpacity style={styles.bookButton}>
+        <TouchableOpacity
+          style={styles.bookButton}
+          onPress={() => {
+            console.log(facilitiesWithIcons);
+          }}
+        >
           <Text style={styles.bookButtonText}>Book now</Text>
         </TouchableOpacity>
       </View>
@@ -272,7 +302,7 @@ const styles = StyleSheet.create({
   },
   facilitiesContainer: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "flex-start",
     flexWrap: "wrap",
   },
   facilityItem: {
