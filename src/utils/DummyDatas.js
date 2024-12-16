@@ -20,6 +20,7 @@ const hotels = [
     ],
     reviews: [
       {
+        id: "1-1",
         user: "Emily Carter",
         comment: "Absolutely stunning and relaxing!",
         rating: 4.9,
@@ -27,6 +28,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile5.jpg"),
       },
       {
+        id: "1-2",
         user: "John Doe",
         comment: "Beautiful location but the service was a bit slow.",
         rating: 4.2,
@@ -34,6 +36,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile12.jpg"),
       },
       {
+        id: "1-3",
         user: "Chris Brown",
         comment: "Loved the mulled wine by the fireplace.",
         rating: 4.8,
@@ -41,6 +44,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile3.jpg"),
       },
       {
+        id: "1-4",
         user: "Lisa Harper",
         comment: "The ski instructors were top-notch.",
         rating: 5.0,
@@ -48,6 +52,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile8.jpg"),
       },
       {
+        id: "1-5",
         user: "Jack Morgan",
         comment: "Beautiful views and amazing facilities.",
         rating: 4.7,
@@ -55,6 +60,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile2.jpg"),
       },
       {
+        id: "1-6",
         user: "Alex Rivera",
         comment: "The private beach was a dream come true.",
         rating: 5.0,
@@ -62,6 +68,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile10.jpg"),
       },
       {
+        id: "1-7",
         user: "Nina Patel",
         comment: "Amazing food and perfect sunsets.",
         rating: 4.9,
@@ -69,6 +76,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile7.jpg"),
       },
       {
+        id: "1-8",
         user: "Liam Carter",
         comment: "A little pricey, but worth every penny.",
         rating: 4.8,
@@ -76,6 +84,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile4.jpg"),
       },
       {
+        id: "1-9",
         user: "Ella Fitzgerald",
         comment: "Best snorkeling experience ever.",
         rating: 5.0,
@@ -83,6 +92,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile11.jpg"),
       },
       {
+        id: "1-10",
         user: "Ryan Adams",
         comment: "The staff were very accommodating.",
         rating: 4.7,
@@ -119,6 +129,7 @@ const hotels = [
     ],
     reviews: [
       {
+        id: "2-1",
         user: "Sarah Lee",
         rating: 5.0,
         comment: "Best skiing experience ever!",
@@ -126,6 +137,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile6.jpg"),
       },
       {
+        id: "2-2",
         user: "Mike Brown",
         comment: "Loved the hot tub after a day on the slopes.",
         rating: 4.5,
@@ -133,6 +145,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile13.jpg"),
       },
       {
+        id: "2-3",
         user: "Ben Carter",
         comment: "Great ski slopes and cozy fireplaces.",
         rating: 5.0,
@@ -140,6 +153,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile8.jpg"),
       },
       {
+        id: "2-4",
         user: "Emily Wong",
         comment: "A winter paradise with excellent staff.",
         rating: 4.9,
@@ -147,6 +161,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile4.jpg"),
       },
       {
+        id: "2-5",
         user: "Emma Stone",
         comment: "Perfect for business trips.",
         rating: 4.5,
@@ -154,6 +169,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile7.jpg"),
       },
       {
+        id: "2-6",
         user: "Harry Brown",
         comment: "Loved the rooftop bar.",
         rating: 4.7,
@@ -161,6 +177,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile2.jpg"),
       },
       {
+        id: "2-7",
         user: "Sophia Li",
         comment: "The room design was modern and elegant.",
         rating: 4.6,
@@ -197,6 +214,7 @@ const hotels = [
     ],
     reviews: [
       {
+        id: "3-1",
         user: "David Johnson",
         rating: 4.5,
         comment: "Great location for exploring NYC!",
@@ -204,6 +222,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile1.jpg"),
       },
       {
+        id: "3-2",
         user: "Anna White",
         rating: 4,
         comment: "Rooms were clean and spacious.",
@@ -211,6 +230,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile3.jpg"),
       },
       {
+        id: "3-3",
         user: "David Clarke",
         comment: "The most luxurious stay I’ve ever had.",
         rating: 5.0,
@@ -218,6 +238,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile5.jpg"),
       },
       {
+        id: "3-4",
         user: "Samantha Yates",
         comment: "The poolside service was excellent.",
         rating: 4.9,
@@ -225,6 +246,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile2.jpg"),
       },
       {
+        id: "3-5",
         user: "Oliver King",
         comment: "A must-visit in Dubai.",
         rating: 5.0,
@@ -232,6 +254,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile8.jpg"),
       },
       {
+        id: "3-6",
         user: "Chloe Parker",
         comment: "Stunning views and exceptional rooms.",
         rating: 4.8,
@@ -239,6 +262,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile6.jpg"),
       },
       {
+        id: "3-7",
         user: "Ethan Lopez",
         comment: "Loved the Arabic-themed dining options.",
         rating: 5.0,
@@ -246,6 +270,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile9.jpg"),
       },
       {
+        id: "3-8",
         user: "James Hill",
         comment: "So peaceful, a real escape from the city.",
         rating: 4.7,
@@ -253,6 +278,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile4.jpg"),
       },
       {
+        id: "3-9",
         user: "Amelia Ross",
         comment: "The spa treatments were incredible.",
         rating: 4.8,
@@ -260,6 +286,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile11.jpg"),
       },
       {
+        id: "3-10",
         user: "Ella Mitchell",
         comment: "Perfect for yoga and meditation.",
         rating: 4.6,
@@ -267,6 +294,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile7.jpg"),
       },
       {
+        id: "3-11",
         user: "Leo Harris",
         comment: "The staff were incredibly friendly.",
         rating: 4.7,
@@ -274,6 +302,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile10.jpg"),
       },
       {
+        id: "3-12",
         user: "Lily Howard",
         comment: "A great place to relax and recharge.",
         rating: 4.8,
@@ -312,6 +341,7 @@ const hotels = [
     ],
     reviews: [
       {
+        id: "4-1",
         user: "Michael Adams",
         rating: 4.2,
         comment: "Loved the tranquility!",
@@ -319,6 +349,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile4.jpg"),
       },
       {
+        id: "4-2",
         user: "Lucy Gray",
         rating: 4.5,
         comment: "The spa was incredible!",
@@ -326,6 +357,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile6.jpg"),
       },
       {
+        id: "4-3",
         user: "James Hill",
         comment: "So peaceful, a real escape from the city.",
         rating: 4.7,
@@ -333,6 +365,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile7.jpg"),
       },
       {
+        id: "4-4",
         user: "Amelia Ross",
         comment: "The spa treatments were incredible.",
         rating: 4.8,
@@ -340,6 +373,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile9.jpg"),
       },
       {
+        id: "4-5",
         user: "Ella Mitchell",
         comment: "Perfect for yoga and meditation.",
         rating: 4.6,
@@ -347,6 +381,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile10.jpg"),
       },
       {
+        id: "4-6",
         user: "Leo Harris",
         comment: "The staff were incredibly friendly.",
         rating: 4.7,
@@ -354,6 +389,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile2.jpg"),
       },
       {
+        id: "4-7",
         user: "Lily Howard",
         comment: "A great place to relax and recharge.",
         rating: 4.8,
@@ -361,6 +397,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile8.jpg"),
       },
       {
+        id: "4-8",
         user: "Sophia Bennett",
         comment: "Perfect location for exploring NYC.",
         rating: 5.0,
@@ -368,6 +405,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile3.jpg"),
       },
       {
+        id: "4-9",
         user: "Mason Carter",
         comment: "The rooftop bar had amazing views.",
         rating: 4.9,
@@ -375,6 +413,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile1.jpg"),
       },
       {
+        id: "4-10",
         user: "Emma Kelly",
         comment: "Rooms were spacious and modern.",
         rating: 4.8,
@@ -382,6 +421,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile11.jpg"),
       },
       {
+        id: "4-11",
         user: "Liam Taylor",
         comment: "Great value for such a central location.",
         rating: 4.7,
@@ -389,6 +429,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile5.jpg"),
       },
       {
+        id: "4-12",
         user: "Olivia White",
         comment: "The breakfast buffet was excellent.",
         rating: 5.0,
@@ -427,6 +468,7 @@ const hotels = [
     ],
     reviews: [
       {
+        id: "5-1",
         user: "Sophia Martin",
         rating: 5.0,
         comment: "The lake view was breathtaking!",
@@ -434,6 +476,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile1.jpg"),
       },
       {
+        id: "5-2",
         user: "Jake Green",
         rating: 4.8,
         comment: "Fantastic place to relax and unwind.",
@@ -441,6 +484,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile2.jpg"),
       },
       {
+        id: "5-3",
         user: "Emma Hill",
         comment: "Best ski resort I’ve ever stayed at.",
         rating: 5.0,
@@ -448,6 +492,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile3.jpg"),
       },
       {
+        id: "5-4",
         user: "William Scott",
         comment: "The food was incredible.",
         rating: 4.8,
@@ -455,6 +500,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile4.jpg"),
       },
       {
+        id: "5-5",
         user: "James Brown",
         comment: "A luxurious alpine experience.",
         rating: 4.9,
@@ -462,6 +508,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile5.jpg"),
       },
       {
+        id: "5-6",
         user: "Ava Harris",
         comment: "The spa was perfect after a long day of skiing.",
         rating: 5.0,
@@ -469,6 +516,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile6.jpg"),
       },
       {
+        id: "5-7",
         user: "Oliver Taylor",
         comment: "Beautiful and tranquil.",
         rating: 4.8,
@@ -476,6 +524,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile7.jpg"),
       },
       {
+        id: "5-8",
         user: "Leo Martinez",
         comment: "Great cocktails by the beach.",
         rating: 4.5,
@@ -483,6 +532,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile8.jpg"),
       },
       {
+        id: "5-9",
         user: "Sophia Lopez",
         comment: "The bungalows were so charming.",
         rating: 4.4,
@@ -490,6 +540,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile9.jpg"),
       },
       {
+        id: "5-10",
         user: "Ava Young",
         comment: "Fantastic spot for water sports.",
         rating: 4.5,
@@ -531,6 +582,7 @@ const hotels = [
     ],
     reviews: [
       {
+        id: "6-1",
         user: "Eva Brown",
         rating: 4.5,
         comment: "A peaceful escape into nature!",
@@ -538,6 +590,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile1.jpg"),
       },
       {
+        id: "6-2",
         user: "Tom Wilson",
         rating: 4.3,
         comment: "The yoga classes were amazing.",
@@ -545,6 +598,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile2.jpg"),
       },
       {
+        id: "6-3",
         user: "Emma Hill",
         comment: "Best ski resort I’ve ever stayed at.",
         rating: 5.0,
@@ -552,6 +606,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile3.jpg"),
       },
       {
+        id: "6-4",
         user: "William Scott",
         comment: "The food was incredible.",
         rating: 4.8,
@@ -559,6 +614,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile4.jpg"),
       },
       {
+        id: "6-5",
         user: "James Brown",
         comment: "A luxurious alpine experience.",
         rating: 4.9,
@@ -566,6 +622,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile5.jpg"),
       },
       {
+        id: "6-6",
         user: "Ava Harris",
         comment: "The spa was perfect after a long day of skiing.",
         rating: 5.0,
@@ -573,6 +630,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile6.jpg"),
       },
       {
+        id: "6-7",
         user: "Oliver Taylor",
         comment: "Beautiful and tranquil.",
         rating: 4.8,
@@ -580,6 +638,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile7.jpg"),
       },
       {
+        id: "6-8",
         user: "Ella Moore",
         comment: "Loved the beachfront yoga classes.",
         rating: 4.6,
@@ -587,6 +646,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile8.jpg"),
       },
       {
+        id: "6-9",
         user: "Mason Allen",
         comment: "Very relaxing atmosphere.",
         rating: 4.5,
@@ -594,6 +654,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile9.jpg"),
       },
       {
+        id: "6-10",
         user: "Jack Williams",
         comment: "Amazing views from every room.",
         rating: 5.0,
@@ -601,6 +662,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile10.jpg"),
       },
       {
+        id: "6-11",
         user: "Luna Collins",
         comment: "The fireplace was perfect for chilly evenings.",
         rating: 4.8,
@@ -641,6 +703,7 @@ const hotels = [
     ],
     reviews: [
       {
+        id: "7-1",
         user: "Laura Smith",
         rating: 5.0,
         comment: "Pure paradise on earth!",
@@ -648,6 +711,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile1.jpg"),
       },
       {
+        id: "7-2",
         user: "Chris Miller",
         rating: 4.9,
         comment: "The overwater villas were unforgettable.",
@@ -655,6 +719,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile2.jpg"),
       },
       {
+        id: "7-3",
         user: "Sophia Bennett",
         comment: "Perfect location for exploring NYC.",
         rating: 5.0,
@@ -662,6 +727,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile3.jpg"),
       },
       {
+        id: "7-4",
         user: "Mason Carter",
         comment: "The rooftop bar had amazing views.",
         rating: 4.9,
@@ -669,6 +735,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile4.jpg"),
       },
       {
+        id: "7-5",
         user: "Emma Kelly",
         comment: "Rooms were spacious and modern.",
         rating: 4.8,
@@ -676,6 +743,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile5.jpg"),
       },
       {
+        id: "7-6",
         user: "Liam Taylor",
         comment: "Great value for such a central location.",
         rating: 4.7,
@@ -683,6 +751,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile6.jpg"),
       },
       {
+        id: "7-7",
         user: "Olivia White",
         comment: "The breakfast buffet was excellent.",
         rating: 5.0,
@@ -719,6 +788,7 @@ const hotels = [
     ],
     reviews: [
       {
+        id: "8-1",
         user: "Diana Evans",
         rating: 4.2,
         comment: "Perfect for wine lovers!",
@@ -726,6 +796,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile8.jpg"),
       },
       {
+        id: "8-2",
         user: "George White",
         rating: 4.1,
         comment: "Beautiful and peaceful location.",
@@ -733,6 +804,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile9.jpg"),
       },
       {
+        id: "8-3",
         user: "Amelia Ross",
         comment: "The spa treatments were incredible.",
         rating: 4.8,
@@ -740,6 +812,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile10.jpg"),
       },
       {
+        id: "8-4",
         user: "Ella Mitchell",
         comment: "Perfect for yoga and meditation.",
         rating: 4.6,
@@ -767,6 +840,7 @@ const hotels = [
     facilities: ["wifi", "city_view", "bar", "meeting", "gym"],
     reviews: [
       {
+        id: "9-1",
         user: "Olivia Brown",
         rating: 4.3,
         comment: "Convenient location and comfortable stay.",
@@ -774,6 +848,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile12.jpg"),
       },
       {
+        id: "9-2",
         user: "Ethan Lee",
         rating: 4.5,
         comment: "Loved the modern design!",
@@ -781,6 +856,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile13.jpg"),
       },
       {
+        id: "9-3",
         user: "David Clarke",
         comment: "The most luxurious stay I’ve ever had.",
         rating: 5.0,
@@ -788,6 +864,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile14.jpg"),
       },
       {
+        id: "9-4",
         user: "Samantha Yates",
         comment: "The poolside service was excellent.",
         rating: 4.9,
@@ -795,6 +872,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile15.jpg"),
       },
       {
+        id: "9-5",
         user: "Oliver King",
         comment: "A must-visit in Dubai.",
         rating: 5.0,
@@ -802,6 +880,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile16.jpg"),
       },
       {
+        id: "9-6",
         user: "Chloe Parker",
         comment: "Stunning views and exceptional rooms.",
         rating: 4.8,
@@ -809,6 +888,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile2.jpg"),
       },
       {
+        id: "9-7",
         user: "Ethan Lopez",
         comment: "Loved the Arabic-themed dining options.",
         rating: 5.0,
@@ -847,6 +927,7 @@ const hotels = [
     ],
     reviews: [
       {
+        id: "10-1",
         user: "Alice Turner",
         rating: 5.0,
         comment: "The view was spectacular!",
@@ -854,6 +935,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile4.jpg"),
       },
       {
+        id: "10-2",
         user: "Jack Harris",
         rating: 4.7,
         comment: "Great for a romantic getaway.",
@@ -861,6 +943,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile5.jpg"),
       },
       {
+        id: "10-3",
         user: "Nina Patel",
         comment: "Amazing food and perfect sunsets.",
         rating: 4.9,
@@ -868,6 +951,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile6.jpg"),
       },
       {
+        id: "10-4",
         user: "Liam Carter",
         comment: "A little pricey, but worth every penny.",
         rating: 4.8,
@@ -875,6 +959,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile7.jpg"),
       },
       {
+        id: "10-5",
         user: "Ella Fitzgerald",
         comment: "Best snorkeling experience ever.",
         rating: 5.0,
@@ -882,6 +967,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile8.jpg"),
       },
       {
+        id: "10-6",
         user: "Emma Stone",
         comment: "Perfect for business trips.",
         rating: 4.5,
@@ -889,6 +975,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile9.jpg"),
       },
       {
+        id: "10-7",
         user: "Harry Brown",
         comment: "Loved the rooftop bar.",
         rating: 4.7,
@@ -896,6 +983,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile10.jpg"),
       },
       {
+        id: "10-8",
         user: "Sophia Li",
         comment: "The room design was modern and elegant.",
         rating: 4.6,
@@ -903,6 +991,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile11.jpg"),
       },
       {
+        id: "10-9",
         user: "Ben Carter",
         comment: "Great ski slopes and cozy fireplaces.",
         rating: 5.0,
@@ -910,6 +999,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile12.jpg"),
       },
       {
+        id: "10-10",
         user: "Emily Wong",
         comment: "A winter paradise with excellent staff.",
         rating: 4.9,
@@ -917,6 +1007,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile13.jpg"),
       },
       {
+        id: "10-11",
         user: "Chris Brown",
         comment: "Loved the mulled wine by the fireplace.",
         rating: 4.8,
@@ -956,6 +1047,7 @@ const hotels = [
     ],
     reviews: [
       {
+        id: "11-1",
         user: "Anna Michaels",
         comment: "Loved the infinity pool and the view was stunning!",
         rating: 5.0,
@@ -963,6 +1055,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile15.jpg"),
       },
       {
+        id: "11-2",
         user: "Tom Greene",
         comment: "Amazing food and great service.",
         rating: 4.8,
@@ -970,6 +1063,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile16.jpg"),
       },
       {
+        id: "11-3",
         user: "Sophia Lee",
         comment: "Perfect for a romantic getaway.",
         rating: 5.0,
@@ -977,6 +1071,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile1.jpg"),
       },
       {
+        id: "11-4",
         user: "John Doe",
         comment: "The gym was well-equipped, and the staff were very polite.",
         rating: 4.6,
@@ -984,6 +1079,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile2.jpg"),
       },
       {
+        id: "11-5",
         user: "Maria Alvarez",
         comment: "The spa treatments were heavenly!",
         rating: 5.0,
@@ -991,6 +1087,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile3.jpg"),
       },
       {
+        id: "11-6",
         user: "David Clarke",
         comment: "The most luxurious stay I’ve ever had.",
         rating: 5.0,
@@ -998,6 +1095,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile4.jpg"),
       },
       {
+        id: "11-7",
         user: "Samantha Yates",
         comment: "The poolside service was excellent.",
         rating: 4.9,
@@ -1005,6 +1103,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile5.jpg"),
       },
       {
+        id: "11-8",
         user: "Oliver King",
         comment: "A must-visit in Dubai.",
         rating: 5.0,
@@ -1012,6 +1111,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile6.jpg"),
       },
       {
+        id: "11-9",
         user: "Chloe Parker",
         comment: "Stunning views and exceptional rooms.",
         rating: 4.8,
@@ -1019,6 +1119,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile7.jpg"),
       },
       {
+        id: "11-10",
         user: "Ethan Lopez",
         comment: "Loved the Arabic-themed dining options.",
         rating: 5.0,
@@ -1047,6 +1148,7 @@ const hotels = [
     ],
     reviews: [
       {
+        id: "12-1",
         user: "Ben Carter",
         comment: "Great ski slopes and cozy fireplaces.",
         rating: "5",
@@ -1054,6 +1156,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile9.jpg"),
       },
       {
+        id: "12-2",
         user: "Emily Wong",
         comment: "A winter paradise with excellent staff.",
         rating: "4.9",
@@ -1061,6 +1164,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile10.jpg"),
       },
       {
+        id: "12-3",
         user: "Chris Brown",
         comment: "Loved the mulled wine by the fireplace.",
         rating: "4.8",
@@ -1068,6 +1172,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile11.jpg"),
       },
       {
+        id: "12-4",
         user: "Lisa Harper",
         comment: "The ski instructors were top-notch.",
         rating: "5",
@@ -1075,6 +1180,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile12.jpg"),
       },
       {
+        id: "12-5",
         user: "Jack Morgan",
         comment: "Beautiful views and amazing facilities.",
         rating: "4.7",
@@ -1082,6 +1188,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile13.jpg"),
       },
       {
+        id: "12-6",
         user: "James Hill",
         comment: "So peaceful, a real escape from the city.",
         rating: "4.7",
@@ -1089,6 +1196,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile14.jpg"),
       },
       {
+        id: "12-7",
         user: "Amelia Ross",
         comment: "The spa treatments were incredible.",
         rating: "4.8",
@@ -1096,6 +1204,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile15.jpg"),
       },
       {
+        id: "12-8",
         user: "Ella Mitchell",
         comment: "Perfect for yoga and meditation.",
         rating: "4.6",
@@ -1103,6 +1212,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile16.jpg"),
       },
       {
+        id: "12-9",
         user: "Leo Harris",
         comment: "The staff were incredibly friendly.",
         rating: "4.7",
@@ -1110,6 +1220,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile1.jpg"),
       },
       {
+        id: "12-10",
         user: "Lily Howard",
         comment: "A great place to relax and recharge.",
         rating: "4.8",
@@ -1117,6 +1228,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile2.jpg"),
       },
       {
+        id: "12-11",
         user: "Sophia Bennett",
         comment: "Perfect location for exploring NYC.",
         rating: "5",
@@ -1124,6 +1236,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile3.jpg"),
       },
       {
+        id: "12-12",
         user: "Mason Carter",
         comment: "The rooftop bar had amazing views.",
         rating: "4.9",
@@ -1131,6 +1244,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile4.jpg"),
       },
       {
+        id: "12-13",
         user: "Emma Kelly",
         comment: "Rooms were spacious and modern.",
         rating: "4.8",
@@ -1138,6 +1252,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile5.jpg"),
       },
       {
+        id: "12-14",
         user: "Liam Taylor",
         comment: "Great value for such a central location.",
         rating: "4.7",
@@ -1145,6 +1260,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile6.jpg"),
       },
       {
+        id: "12-15",
         user: "Olivia White",
         comment: "The breakfast buffet was excellent.",
         rating: "5",
@@ -1182,6 +1298,7 @@ const hotels = [
     ],
     reviews: [
       {
+        id: "13-1",
         user: "Alice Kim",
         comment: "Loved the sushi at the in-house restaurant!",
         rating: "4.8",
@@ -1189,6 +1306,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile8.jpg"),
       },
       {
+        id: "13-2",
         user: "Mike Jacobs",
         comment: "Central location and great facilities.",
         rating: "4.6",
@@ -1196,6 +1314,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile9.jpg"),
       },
       {
+        id: "13-3",
         user: "Emma Stone",
         comment: "Perfect for business trips.",
         rating: "4.5",
@@ -1203,6 +1322,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile10.jpg"),
       },
       {
+        id: "13-4",
         user: "Harry Brown",
         comment: "Loved the rooftop bar.",
         rating: "4.7",
@@ -1210,6 +1330,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile11.jpg"),
       },
       {
+        id: "13-5",
         user: "Sophia Li",
         comment: "The room design was modern and elegant.",
         rating: "4.6",
@@ -1247,6 +1368,7 @@ const hotels = [
     ],
     reviews: [
       {
+        id: "14-1",
         user: "Alex Rivera",
         comment: "The private beach was a dream come true.",
         rating: "5",
@@ -1254,6 +1376,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile1.jpg"),
       },
       {
+        id: "14-2",
         user: "Nina Patel",
         comment: "Amazing food and perfect sunsets.",
         rating: "4.9",
@@ -1261,6 +1384,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile7.jpg"),
       },
       {
+        id: "14-3",
         user: "Liam Carter",
         comment: "A little pricey, but worth every penny.",
         rating: "4.8",
@@ -1268,6 +1392,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile3.jpg"),
       },
       {
+        id: "14-4",
         user: "Ella Fitzgerald",
         comment: "Best snorkeling experience ever.",
         rating: "5",
@@ -1275,6 +1400,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile9.jpg"),
       },
       {
+        id: "14-5",
         user: "Ryan Adams",
         comment: "The staff were very accommodating.",
         rating: "4.7",
@@ -1282,6 +1408,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile5.jpg"),
       },
       {
+        id: "14-6",
         user: "Leo Martinez",
         comment: "Great cocktails by the beach.",
         rating: "4.5",
@@ -1289,6 +1416,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile11.jpg"),
       },
       {
+        id: "14-7",
         user: "Sophia Lopez",
         comment: "The bungalows were so charming.",
         rating: "4.4",
@@ -1296,6 +1424,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile2.jpg"),
       },
       {
+        id: "14-8",
         user: "Ava Young",
         comment: "Fantastic spot for water sports.",
         rating: "4.5",
@@ -1303,6 +1432,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile8.jpg"),
       },
       {
+        id: "14-9",
         user: "Ella Moore",
         comment: "Loved the beachfront yoga classes.",
         rating: "4.6",
@@ -1310,6 +1440,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile6.jpg"),
       },
       {
+        id: "14-10",
         user: "Mason Allen",
         comment: "Very relaxing atmosphere.",
         rating: "4.5",
@@ -1338,6 +1469,7 @@ const hotels = [
     ],
     reviews: [
       {
+        id: "15-1",
         user: "David Clarke",
         comment: "The most luxurious stay I’ve ever had.",
         rating: "5",
@@ -1345,6 +1477,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile1.jpg"),
       },
       {
+        id: "15-2",
         user: "Samantha Yates",
         comment: "The poolside service was excellent.",
         rating: "4.9",
@@ -1352,6 +1485,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile8.jpg"),
       },
       {
+        id: "15-3",
         user: "Oliver King",
         comment: "A must-visit in Dubai.",
         rating: "5",
@@ -1359,6 +1493,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile3.jpg"),
       },
       {
+        id: "15-4",
         user: "Chloe Parker",
         comment: "Stunning views and exceptional rooms.",
         rating: "4.8",
@@ -1366,6 +1501,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile7.jpg"),
       },
       {
+        id: "15-5",
         user: "Ethan Lopez",
         comment: "Loved the Arabic-themed dining options.",
         rating: "5",
@@ -1373,6 +1509,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile6.jpg"),
       },
       {
+        id: "15-6",
         user: "Alex Rivera",
         comment: "The private beach was a dream come true.",
         rating: "5",
@@ -1380,6 +1517,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile5.jpg"),
       },
       {
+        id: "15-7",
         user: "Nina Patel",
         comment: "Amazing food and perfect sunsets.",
         rating: "4.9",
@@ -1387,6 +1525,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile2.jpg"),
       },
       {
+        id: "15-8",
         user: "Liam Carter",
         comment: "A little pricey, but worth every penny.",
         rating: "4.8",
@@ -1394,6 +1533,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile9.jpg"),
       },
       {
+        id: "15-9",
         user: "Ella Fitzgerald",
         comment: "Best snorkeling experience ever.",
         rating: "5",
@@ -1401,6 +1541,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile4.jpg"),
       },
       {
+        id: "15-10",
         user: "Ryan Adams",
         comment: "The staff were very accommodating.",
         rating: "4.7",
@@ -1439,6 +1580,7 @@ const hotels = [
     ],
     reviews: [
       {
+        id: "16-1",
         user: "James Hill",
         comment: "So peaceful, a real escape from the city.",
         rating: "4.7",
@@ -1446,6 +1588,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile11.jpg"),
       },
       {
+        id: "16-2",
         user: "Amelia Ross",
         comment: "The spa treatments were incredible.",
         rating: "4.8",
@@ -1453,6 +1596,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile12.jpg"),
       },
       {
+        id: "16-3",
         user: "Ella Mitchell",
         comment: "Perfect for yoga and meditation.",
         rating: "4.6",
@@ -1460,6 +1604,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile13.jpg"),
       },
       {
+        id: "16-4",
         user: "Leo Harris",
         comment: "The staff were incredibly friendly.",
         rating: "4.7",
@@ -1467,6 +1612,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile14.jpg"),
       },
       {
+        id: "16-5",
         user: "Lily Howard",
         comment: "A great place to relax and recharge.",
         rating: "4.8",
@@ -1474,6 +1620,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile15.jpg"),
       },
       {
+        id: "16-6",
         user: "Alex Rivera",
         comment: "The private beach was a dream come true.",
         rating: "5",
@@ -1481,6 +1628,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile5.jpg"),
       },
       {
+        id: "16-7",
         user: "Nina Patel",
         comment: "Amazing food and perfect sunsets.",
         rating: "4.9",
@@ -1488,6 +1636,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile2.jpg"),
       },
       {
+        id: "16-8",
         user: "Liam Carter",
         comment: "A little pricey, but worth every penny.",
         rating: "4.8",
@@ -1495,6 +1644,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile9.jpg"),
       },
       {
+        id: "16-9",
         user: "Ella Fitzgerald",
         comment: "Best snorkeling experience ever.",
         rating: "5",
@@ -1502,6 +1652,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile4.jpg"),
       },
       {
+        id: "16-10",
         user: "Ryan Adams",
         comment: "The staff were very accommodating.",
         rating: "4.7",
@@ -1509,6 +1660,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile10.jpg"),
       },
       {
+        id: "16-11",
         user: "Alice Kim",
         comment: "Loved the sushi at the in-house restaurant!",
         rating: "4.8",
@@ -1516,6 +1668,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile3.jpg"),
       },
       {
+        id: "16-12",
         user: "Mike Jacobs",
         comment: "Central location and great facilities.",
         rating: "4.6",
@@ -1523,6 +1676,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile16.jpg"),
       },
       {
+        id: "16-13",
         user: "Emma Stone",
         comment: "Perfect for business trips.",
         rating: "4.5",
@@ -1530,6 +1684,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile7.jpg"),
       },
       {
+        id: "16-14",
         user: "Harry Brown",
         comment: "Loved the rooftop bar.",
         rating: "4.7",
@@ -1537,6 +1692,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile8.jpg"),
       },
       {
+        id: "16-15",
         user: "Sophia Li",
         comment: "The room design was modern and elegant.",
         rating: "4.6",
@@ -1565,6 +1721,7 @@ const hotels = [
     ],
     reviews: [
       {
+        id: "17-1",
         user: "Sophia Bennett",
         comment: "Perfect location for exploring NYC.",
         rating: "5",
@@ -1572,6 +1729,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile1.jpg"),
       },
       {
+        id: "17-2",
         user: "Mason Carter",
         comment: "The rooftop bar had amazing views.",
         rating: "4.9",
@@ -1579,6 +1737,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile2.jpg"),
       },
       {
+        id: "17-3",
         user: "Emma Kelly",
         comment: "Rooms were spacious and modern.",
         rating: "4.8",
@@ -1586,6 +1745,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile3.jpg"),
       },
       {
+        id: "17-4",
         user: "Liam Taylor",
         comment: "Great value for such a central location.",
         rating: "4.7",
@@ -1593,6 +1753,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile4.jpg"),
       },
       {
+        id: "17-5",
         user: "Olivia White",
         comment: "The breakfast buffet was excellent.",
         rating: "5",
@@ -1631,6 +1792,7 @@ const hotels = [
     ],
     reviews: [
       {
+        id: "18-1",
         user: "Alice Kim",
         comment: "Loved the sushi at the in-house restaurant!",
         rating: "4.8",
@@ -1638,6 +1800,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile6.jpg"),
       },
       {
+        id: "18-2",
         user: "Mike Jacobs",
         comment: "Central location and great facilities.",
         rating: "4.6",
@@ -1645,6 +1808,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile7.jpg"),
       },
       {
+        id: "18-3",
         user: "Emma Stone",
         comment: "Perfect for business trips.",
         rating: "4.5",
@@ -1652,6 +1816,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile8.jpg"),
       },
       {
+        id: "18-4",
         user: "Harry Brown",
         comment: "Loved the rooftop bar.",
         rating: "4.7",
@@ -1659,6 +1824,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile9.jpg"),
       },
       {
+        id: "18-5",
         user: "Sophia Li",
         comment: "The room design was modern and elegant.",
         rating: "4.6",
@@ -1666,6 +1832,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile10.jpg"),
       },
       {
+        id: "18-6",
         user: "Jack Williams",
         comment: "Amazing views from every room.",
         rating: "5",
@@ -1673,6 +1840,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile11.jpg"),
       },
       {
+        id: "18-7",
         user: "Luna Collins",
         comment: "The fireplace was perfect for chilly evenings.",
         rating: "4.8",
@@ -1680,6 +1848,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile12.jpg"),
       },
       {
+        id: "18-8",
         user: "Ben Carter",
         comment: "Great ski slopes and cozy fireplaces.",
         rating: "5",
@@ -1687,6 +1856,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile13.jpg"),
       },
       {
+        id: "18-9",
         user: "Emily Wong",
         comment: "A winter paradise with excellent staff.",
         rating: "4.9",
@@ -1694,6 +1864,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile14.jpg"),
       },
       {
+        id: "18-10",
         user: "Oscar Davis",
         comment: "The staff went above and beyond.",
         rating: "4.7",
@@ -1701,6 +1872,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile15.jpg"),
       },
       {
+        id: "18-11",
         user: "Mia Hall",
         comment: "Great location for skiing.",
         rating: "4.9",
@@ -1708,6 +1880,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile16.jpg"),
       },
       {
+        id: "18-12",
         user: "Ella Wilson",
         comment: "Comfortable and cozy rooms.",
         rating: "4.6",
@@ -1744,6 +1917,7 @@ const hotels = [
     ],
     reviews: [
       {
+        id: "19-1",
         user: "Leo Martinez",
         comment: "Great cocktails by the beach.",
         rating: "4.5",
@@ -1751,6 +1925,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile2.jpg"),
       },
       {
+        id: "19-2",
         user: "Sophia Lopez",
         comment: "The bungalows were so charming.",
         rating: "4.4",
@@ -1758,6 +1933,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile3.jpg"),
       },
       {
+        id: "19-3",
         user: "Ava Young",
         comment: "Fantastic spot for water sports.",
         rating: "4.5",
@@ -1765,6 +1941,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile4.jpg"),
       },
       {
+        id: "19-4",
         user: "Chris Brown",
         comment: "Loved the mulled wine by the fireplace.",
         rating: "4.8",
@@ -1772,6 +1949,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile5.jpg"),
       },
       {
+        id: "19-5",
         user: "Lisa Harper",
         comment: "The ski instructors were top-notch.",
         rating: "5",
@@ -1779,6 +1957,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile6.jpg"),
       },
       {
+        id: "19-6",
         user: "Jack Morgan",
         comment: "Beautiful views and amazing facilities.",
         rating: "4.7",
@@ -1786,6 +1965,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile7.jpg"),
       },
       {
+        id: "19-7",
         user: "Mike Jacobs",
         comment: "Central location and great facilities.",
         rating: "4.6",
@@ -1793,6 +1973,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile8.jpg"),
       },
       {
+        id: "19-8",
         user: "Emma Stone",
         comment: "Perfect for business trips.",
         rating: "4.5",
@@ -1800,6 +1981,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile9.jpg"),
       },
       {
+        id: "19-9",
         user: "Harry Brown",
         comment: "Loved the rooftop bar.",
         rating: "4.7",
@@ -1807,6 +1989,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile10.jpg"),
       },
       {
+        id: "19-10",
         user: "Ella Moore",
         comment: "Loved the beachfront yoga classes.",
         rating: "4.6",
@@ -1814,6 +1997,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile11.jpg"),
       },
       {
+        id: "19-11",
         user: "Mason Allen",
         comment: "Very relaxing atmosphere.",
         rating: "4.5",
@@ -1854,6 +2038,7 @@ const hotels = [
     ],
     reviews: [
       {
+        id: "20-1",
         user: "Emma Hill",
         comment: "Best ski resort I’ve ever stayed at.",
         rating: "5",
@@ -1861,6 +2046,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile1.jpg"),
       },
       {
+        id: "20-2",
         user: "William Scott",
         comment: "The food was incredible.",
         rating: "4.8",
@@ -1868,6 +2054,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile2.jpg"),
       },
       {
+        id: "20-3",
         user: "Anna Michaels",
         comment: "Loved the infinity pool and the view was stunning!",
         rating: "5",
@@ -1875,6 +2062,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile3.jpg"),
       },
       {
+        id: "20-4",
         user: "Tom Greene",
         comment: "Amazing food and great service.",
         rating: "4.8",
@@ -1882,6 +2070,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile4.jpg"),
       },
       {
+        id: "20-5",
         user: "Sophia Lee",
         comment: "Perfect for a romantic getaway.",
         rating: "5",
@@ -1889,6 +2078,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile5.jpg"),
       },
       {
+        id: "20-6",
         user: "John Doe",
         comment: "The gym was well-equipped, and the staff were very polite.",
         rating: "4.6",
@@ -1896,6 +2086,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile6.jpg"),
       },
       {
+        id: "20-7",
         user: "James Brown",
         comment: "A luxurious alpine experience.",
         rating: "4.9",
@@ -1903,6 +2094,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile7.jpg"),
       },
       {
+        id: "20-8",
         user: "Ava Harris",
         comment: "The spa was perfect after a long day of skiing.",
         rating: "5",
@@ -1910,6 +2102,7 @@ const hotels = [
         avatar: require("../../assets/profiles/profile8.jpg"),
       },
       {
+        id: "20-9",
         user: "Oliver Taylor",
         comment: "Beautiful and tranquil.",
         rating: "4.8",
