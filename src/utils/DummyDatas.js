@@ -3,7 +3,7 @@ const hotels = [
     id: "1",
     name: "Oceanview Paradise",
     location: "Miami, Florida",
-    price: "198,000",
+    price: 198,
     rating: "4.6",
     description:
       "A luxurious beachside retreat with stunning ocean views and world-class amenities.",
@@ -115,7 +115,7 @@ const hotels = [
     id: "2",
     name: "Mountain Escape",
     location: "Aspen, Colorado",
-    price: "300,000",
+    price: 300,
     rating: "4.7",
     description:
       "Cozy cabins nestled in the heart of the mountains, perfect for skiing enthusiasts.",
@@ -202,7 +202,7 @@ const hotels = [
     id: "3",
     name: "City Lights Hotel",
     location: "New York, NY",
-    price: "182,000",
+    price: 182,
     rating: "4.2",
     description:
       "A modern hotel in the heart of the city, with breathtaking views of the skyline.",
@@ -330,7 +330,7 @@ const hotels = [
     id: "4",
     name: "Desert Oasis",
     location: "Phoenix, Arizona",
-    price: "90,000",
+    price: 90,
     rating: "4.3",
     description:
       "Experience serenity in the desert with our luxurious pool and spa services.",
@@ -459,7 +459,7 @@ const hotels = [
     id: "5",
     name: "Lakefront Lodge",
     location: "Geneva, Switzerland",
-    price: "250,000",
+    price: 250,
     rating: "4.9",
     description:
       "Escape to a picturesque lodge by the lake with stunning water views.",
@@ -572,7 +572,7 @@ const hotels = [
     id: "6",
     name: "Jungle Retreat",
     location: "Bali, Indonesia",
-    price: "110,000",
+    price: 110,
     rating: "4.4",
     description:
       "Immerse yourself in nature with our eco-friendly resort surrounded by greenery.",
@@ -697,7 +697,7 @@ const hotels = [
     id: "7",
     name: "Island Dreams Resort",
     location: "Maldives",
-    price: "290,000",
+    price: 290,
     rating: "4.8",
     description:
       "Luxury villas above crystal-clear waters, offering the ultimate island escape.",
@@ -785,7 +785,7 @@ const hotels = [
     id: "8",
     name: "Countryside Inn",
     location: "Tuscany, Italy",
-    price: "120,000",
+    price: 120,
     rating: "4.1",
     description:
       "Charming countryside inn with breathtaking vineyard views and Italian cuisine.",
@@ -848,7 +848,7 @@ const hotels = [
     id: "9",
     name: "Urban Comfort",
     location: "London, UK",
-    price: "150,000",
+    price: 150,
     rating: "4.3",
     description:
       "A modern, urban hotel with sleek designs and easy access to city attractions.",
@@ -927,7 +927,7 @@ const hotels = [
     id: "10",
     name: "Coastal Bliss",
     location: "Sydney, Australia",
-    price: "220,000",
+    price: 220,
     rating: "4.8",
     description:
       "Beachfront luxury with panoramic ocean views and exclusive amenities.",
@@ -1051,7 +1051,7 @@ const hotels = [
     name: "Coastal Retreat",
     location: "Santorini, Greece",
     longAddress: "123 Seaside Blvd, Santorini, Greece, 84700",
-    price: "75,000",
+    price: 75,
     rating: "4.7",
     description:
       "A serene coastal retreat offering breathtaking ocean views and luxurious accommodations.",
@@ -1155,7 +1155,7 @@ const hotels = [
     name: "The pheels",
     location: "Ajah, Lagos",
     longAddress: "45 Alpine St, Ajah, Lagos, 81611",
-    price: "120,000",
+    price: 120,
     rating: "4.9",
     description:
       "Nestled in the heart of the mountains, this haven offers both adventure and relaxation.",
@@ -1298,7 +1298,7 @@ const hotels = [
     name: "Estabeez",
     location: "Ikoyi, Lagos",
     longAddress: "56 Akihabara St, Ikoyi, Lagos, 101-002",
-    price: "95,000",
+    price: 95,
     rating: "4.6",
     description:
       "Experience the bustling city life with a blend of modern luxury.",
@@ -1370,7 +1370,7 @@ const hotels = [
     name: "Saragoza",
     location: "Pukhet, Tailand",
     longAddress: "12 Lagoon Rd, Pukhet, Tailand, 20252",
-    price: "180,000",
+    price: 180,
     rating: "4.8",
     description: "Relax in a private villa surrounded by crystal-clear waters.",
     facilities: [
@@ -1482,7 +1482,7 @@ const hotels = [
     name: "Golden Sands Resort",
     location: "Dubai, UAE",
     longAddress: "33 Sheikh Zayed Rd, Dubai, UAE, 00000",
-    price: "205,000",
+    price: 205,
     rating: "4.9",
     description:
       "A luxurious desert oasis with stunning architecture and top-tier services.",
@@ -1585,7 +1585,7 @@ const hotels = [
     name: "Rainforest Retreat",
     location: "Bali, Indonesia",
     longAddress: "45 Jungle Path, Ubud, Bali, 80571",
-    price: "70,000",
+    price: 70,
     rating: "4.6",
     description:
       "Reconnect with nature in this peaceful retreat surrounded by lush greenery.",
@@ -1738,7 +1738,7 @@ const hotels = [
     name: "Cityscape Hotel",
     location: "New York, USA",
     longAddress: "100 Manhattan Ave, New York, NY, 10001",
-    price: "150,000",
+    price: 150,
     rating: "4.8",
     description: "A modern city escape located in the heart of Manhattan.",
     facilities: ["wifi", "restaurant", "gym", "bar", "parking", "city_view"],
@@ -1801,7 +1801,7 @@ const hotels = [
     name: "Lakeview Lodge",
     location: "Queenstown, New Zealand",
     longAddress: "88 Scenic Rd, Queenstown, New Zealand, 9300",
-    price: "112,000",
+    price: 122,
     rating: "4.7",
     description:
       "Enjoy breathtaking views of the lake and surrounding mountains.",
@@ -1930,7 +1930,7 @@ const hotels = [
     name: "Beachside Bungalows",
     location: "Cancun, Mexico",
     longAddress: "22 Ocean Rd, Cancun, Mexico, 77500",
-    price: "65,000",
+    price: 65,
     rating: "4.5",
     description: "Relax in beachfront bungalows with a laid-back vibe.",
     facilities: [
@@ -2049,7 +2049,7 @@ const hotels = [
     name: "Winter Wonderland Resort",
     location: "Zermatt, Switzerland",
     longAddress: "1 Glacier Rd, Zermatt, Switzerland, 3920",
-    price: "253,000",
+    price: 253,
     rating: "4.9",
     description:
       "Experience the magic of the Swiss Alps with world-class skiing.",
