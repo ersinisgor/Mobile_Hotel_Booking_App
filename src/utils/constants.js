@@ -7,6 +7,7 @@ const PADDING_SM = 15;
 
 const COLORS = {
   primary: "#238C98",
+  primaryLight: "rgba(35, 140, 152, 0.3)",
   secondary: "#1976D2",
   inActiveFont: "#B1ACAC",
   inActiveTab: "#B8B8B9",

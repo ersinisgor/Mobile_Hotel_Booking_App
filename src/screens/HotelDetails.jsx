@@ -212,7 +212,7 @@ const HotelDetails = () => {
         <TouchableOpacity
           style={styles.bookButton}
           onPress={() => {
-            console.log(facilitiesWithIcons);
+            navigation.navigate("BookingForm", { hotel });
           }}
         >
           <Text style={styles.bookButtonText}>Book now</Text>
@@ -329,18 +329,6 @@ const styles = StyleSheet.create({
     height: WIDTH - PADDING_SM * 2,
     flex: 1,
   },
-  calloutContainer: {
-    backgroundColor: "white",
-    padding: 8,
-    borderRadius: 6,
-    borderColor: "#ccc",
-    borderWidth: 1,
-    elevation: 3,
-  },
-  calloutText: {
-    fontSize: 14,
-    fontWeight: "bold",
-  },
   reviewsHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -434,7 +422,8 @@ const styles = StyleSheet.create({
     width: 218,
     paddingVertical: 8,
     borderRadius: 12,
-    backgroundColor: "#a8dadc",
+    // backgroundColor: "#a8dadc",
+    backgroundColor: COLORS.primaryLight,
   },
   moreButtonText: {
     textAlign: "center",
