@@ -108,6 +108,8 @@ const hotels = [
       require("../../assets/images/image5.jpg"),
       require("../../assets/images/image18.jpg"),
     ],
+    latitude: 25.756043,
+    longitude: -80.200876,
   },
   {
     id: "2",
@@ -193,6 +195,8 @@ const hotels = [
       require("../../assets/images/image20.jpg"),
       require("../../assets/images/image1.jpg"),
     ],
+    latitude: 39.1911,
+    longitude: -106.8175,
   },
   {
     id: "3",
@@ -319,6 +323,8 @@ const hotels = [
       require("../../assets/images/image23.jpg"),
       require("../../assets/images/image17.jpg"),
     ],
+    latitude: 40.7128,
+    longitude: -74.006,
   },
   {
     id: "4",
@@ -446,6 +452,8 @@ const hotels = [
       require("../../assets/images/image24.jpg"),
       require("../../assets/images/image3.jpg"),
     ],
+    latitude: 33.4484,
+    longitude: -112.074,
   },
   {
     id: "5",
@@ -557,6 +565,8 @@ const hotels = [
       require("../../assets/images/image14.jpg"),
       require("../../assets/images/image17.jpg"),
     ],
+    latitude: 46.2044,
+    longitude: 6.1432,
   },
   {
     id: "6",
@@ -680,6 +690,8 @@ const hotels = [
       require("../../assets/images/image15.jpg"),
       require("../../assets/images/image12.jpg"),
     ],
+    latitude: -8.3405,
+    longitude: 115.1398,
   },
   {
     id: "7",
@@ -766,6 +778,8 @@ const hotels = [
       require("../../assets/images/image12.jpg"),
       require("../../assets/images/image19.jpg"),
     ],
+    latitude: 3.2028,
+    longitude: 73.2207,
   },
   {
     id: "8",
@@ -827,6 +841,8 @@ const hotels = [
       require("../../assets/images/image1.jpg"),
       require("../../assets/images/image23.jpg"),
     ],
+    latitude: 43.7711,
+    longitude: 11.2486,
   },
   {
     id: "9",
@@ -904,6 +920,8 @@ const hotels = [
       require("../../assets/images/image18.jpg"),
       require("../../assets/images/image15.jpg"),
     ],
+    latitude: 51.5074,
+    longitude: -0.1278,
   },
   {
     id: "10",
@@ -1025,6 +1043,8 @@ const hotels = [
       require("../../assets/images/image1.jpg"),
       require("../../assets/images/image16.jpg"),
     ],
+    latitude: -33.8688,
+    longitude: 151.2093,
   },
   {
     id: "11",
@@ -1127,6 +1147,8 @@ const hotels = [
         avatar: require("../../assets/profiles/profile8.jpg"),
       },
     ],
+    latitude: 37.9838,
+    longitude: 23.7275,
   },
   {
     id: "12",
@@ -1268,6 +1290,8 @@ const hotels = [
         avatar: require("../../assets/profiles/profile7.jpg"),
       },
     ],
+    latitude: 6.5244,
+    longitude: 3.3792,
   },
   {
     id: "13",
@@ -1338,6 +1362,8 @@ const hotels = [
         avatar: require("../../assets/profiles/profile12.jpg"),
       },
     ],
+    latitude: 6.4654,
+    longitude: 3.4064,
   },
   {
     id: "14",
@@ -1448,6 +1474,8 @@ const hotels = [
         avatar: require("../../assets/profiles/profile10.jpg"),
       },
     ],
+    latitude: 7.8804,
+    longitude: 98.3923,
   },
   {
     id: "15",
@@ -1549,6 +1577,8 @@ const hotels = [
         avatar: require("../../assets/profiles/profile10.jpg"),
       },
     ],
+    latitude: 25.2048,
+    longitude: 55.2708,
   },
   {
     id: "16",
@@ -1700,6 +1730,8 @@ const hotels = [
         avatar: require("../../assets/profiles/profile6.jpg"),
       },
     ],
+    latitude: -8.4095,
+    longitude: 115.1889,
   },
   {
     id: "17",
@@ -1761,6 +1793,8 @@ const hotels = [
         avatar: require("../../assets/profiles/profile5.jpg"),
       },
     ],
+    latitude: 40.7128,
+    longitude: -74.006,
   },
   {
     id: "18",
@@ -1888,6 +1922,8 @@ const hotels = [
         avatar: require("../../assets/profiles/profile1.jpg"),
       },
     ],
+    latitude: -45.0312,
+    longitude: 168.6626,
   },
   {
     id: "19",
@@ -2005,6 +2041,8 @@ const hotels = [
         avatar: require("../../assets/profiles/profile12.jpg"),
       },
     ],
+    latitude: 21.1619,
+    longitude: -86.8515,
   },
   {
     id: "20",
@@ -2110,6 +2148,8 @@ const hotels = [
         avatar: require("../../assets/profiles/profile9.jpg"),
       },
     ],
+    latitude: 46.0207,
+    longitude: 7.7491,
   },
 ];
 

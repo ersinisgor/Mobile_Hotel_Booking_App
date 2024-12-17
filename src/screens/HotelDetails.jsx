@@ -12,7 +12,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { COLORS, HEIGHT, PADDING_SM, WIDTH } from "../utils/constants";
-import { facilities, facilitiesWithIcons } from "../utils/helpers";
+import { facilities } from "../utils/helpers";
+import MapView, { Marker } from "react-native-maps";
 
 const HotelDetails = () => {
   const navigation = useNavigation();
@@ -21,14 +22,6 @@ const HotelDetails = () => {
 
   const route = useRoute();
   const { hotel } = route.params;
-
-  // const facilities = [
-  //   { id: "1", name: "Wifi", icon: "wifi" },
-  //   { id: "2", name: "Restaurant", icon: "restaurant" },
-  //   { id: "3", name: "Bar", icon: "wine-bar" },
-  //   { id: "4", name: "Pool", icon: "pool" },
-  //   { id: "5", name: "Gym", icon: "fitness-center" },
-  // ];
 
   const displayedReviews = showMoreReviews
     ? hotel.reviews.slice(0, 15)
@@ -86,39 +79,40 @@ const HotelDetails = () => {
             />
             <Text style={styles.location}>{hotel.longAddress}</Text>
           </View>
-
           {/* Description Section */}
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Description</Text>
             <Text style={styles.description}>{hotel.description}</Text>
           </View>
 
-          {/* Facilities Section
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Facilities</Text>
-            <View style={styles.facilitiesContainer}>
-              {facilities.map(facility => (
-                <View key={facility.id} style={styles.facilityItem}>
-                  <View style={styles.facilityIconContainer}>
-                    <MaterialIcons
-                      name={facility.icon}
-                      size={24}
-                      color={COLORS.primary}
-                    />
-                  </View>
-                  <Text style={styles.facilityName}>{facility.name}</Text>
-                </View>
-              ))}
-            </View>
-          </View> */}
+          {/* Map Section */}
+          <View style={styles.mapContainer}>
+            <MapView
+              style={styles.map}
+              initialRegion={{
+                latitude: hotel.latitude,
+                longitude: hotel.longitude,
+                latitudeDelta: 0.01,
+                longitudeDelta: 0.01,
+              }}
+              // showsUserLocation={true}
+            >
+              <Marker
+                coordinate={{
+                  latitude: hotel.latitude,
+                  longitude: hotel.longitude,
+                }}
+                title={hotel.name}
+              />
+            </MapView>
+          </View>
 
           {/* Facilities Section */}
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Facilities</Text>
             <View style={styles.facilitiesContainer}>
-              {/* Filter facilities based on the current hotel's available facilities */}
               {facilities
-                .filter(facility => hotel.facilities.includes(facility.name)) // Filter facilities
+                .filter(facility => hotel.facilities.includes(facility.name))
                 .map(facility => (
                   <View key={facility.id} style={styles.facilityItem}>
                     <View style={styles.facilityIconContainer}>
@@ -324,6 +318,28 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: COLORS.grayFont,
     textAlign: "center",
+  },
+  mapContainer: {
+    overflow: "hidden",
+    marginTop: PADDING_SM,
+    flex: 1,
+  },
+  map: {
+    width: WIDTH - PADDING_SM * 2,
+    height: WIDTH - PADDING_SM * 2,
+    flex: 1,
+  },
+  calloutContainer: {
+    backgroundColor: "white",
+    padding: 8,
+    borderRadius: 6,
+    borderColor: "#ccc",
+    borderWidth: 1,
+    elevation: 3,
+  },
+  calloutText: {
+    fontSize: 14,
+    fontWeight: "bold",
   },
   reviewsHeader: {
     flexDirection: "row",
