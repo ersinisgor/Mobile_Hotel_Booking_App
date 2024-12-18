@@ -14,6 +14,7 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import { COLORS, HEIGHT, PADDING_SM, WIDTH } from "../utils/constants";
 import { facilities } from "../utils/helpers";
 import MapView, { Marker } from "react-native-maps";
+import Footer from "../components/Footer";
 
 const HotelDetails = () => {
   const navigation = useNavigation();
@@ -203,8 +204,8 @@ const HotelDetails = () => {
         </View>
       </ScrollView>
 
-      {/* Bottom Bar */}
-      <View style={styles.bottomBar}>
+      {/* Footer */}
+      {/* <View style={styles.bottomBar}>
         <View style={styles.priceContainer}>
           <Text style={styles.price}>$ {hotel.price}</Text>
           <Text style={styles.priceUnit}>/night</Text>
@@ -217,7 +218,8 @@ const HotelDetails = () => {
         >
           <Text style={styles.bookButtonText}>Book now</Text>
         </TouchableOpacity>
-      </View>
+      </View> */}
+      <Footer hotel={hotel} title="Book now" navigation />
     </SafeAreaView>
   );
 };

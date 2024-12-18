@@ -10,6 +10,7 @@ import EditProfile from "../screens/EditProfile";
 import ListHotels from "../screens/ListHotels";
 import HotelDetails from "../screens/HotelDetails";
 import BookingForm from "../screens/BookingForm";
+import BookSummary from "../screens/BookSummary";
 
 const Stack = createStackNavigator();
 
@@ -95,6 +96,21 @@ const MainNavigation = () => {
           options={{
             animation: "fade_from_bottom",
             title: "Booking Form",
+            headerStyle: {
+              elevation: 0,
+              shadowOpacity: 0,
+              borderBottomWidth: 0,
+            },
+            headerTitleAlign: "center",
+            headerTitleStyle: { fontFamily: "Poppins-SemiBold", fontSize: 20 },
+          }}
+        />
+        <Stack.Screen
+          name="BookSummary"
+          component={BookSummary}
+          options={{
+            animation: "fade_from_bottom",
+            title: "Booking Summary",
             headerStyle: {
               elevation: 0,
               shadowOpacity: 0,
