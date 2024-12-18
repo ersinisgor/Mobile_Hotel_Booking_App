@@ -3,7 +3,7 @@ import React from "react";
 import { COLORS, PADDING_SM } from "../utils/constants";
 import { useNavigation } from "@react-navigation/native";
 
-const Footer = ({ title, hotel, price }) => {
+const Footer = ({ title, hotel, price, formData }) => {
   const navigation = useNavigation();
   return (
     <View style={styles.bottomBar}>
@@ -30,7 +30,7 @@ const Footer = ({ title, hotel, price }) => {
         style={styles.bookButton}
         onPress={() => {
           title === "Continue"
-            ? navigation.navigate("BookSummary", { hotel })
+            ? navigation.navigate("BookSummary", { hotel, formData })
             : navigation.navigate("BookingForm", { hotel });
         }}
       >

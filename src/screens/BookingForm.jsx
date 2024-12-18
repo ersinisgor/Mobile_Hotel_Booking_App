@@ -281,6 +281,7 @@ const BookingForm = () => {
       <Footer
         title="Continue"
         hotel={hotel}
+        formData={formData}
         price={calculateTotal().toLocaleString()}
       />
     </SafeAreaView>
