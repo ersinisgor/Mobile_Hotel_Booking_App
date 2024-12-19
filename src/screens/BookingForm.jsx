@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   ScrollView,
   Platform,
+  Modal,
 } from "react-native";
 import React, { useState } from "react";
 import { useRoute, useNavigation } from "@react-navigation/native";
@@ -15,11 +16,15 @@ import { COLORS, PADDING, PADDING_SM } from "../utils/constants";
 import Footer from "../components/Footer";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CheckRow from "../components/CheckRow";
+import { formatDate } from "../utils/helpers";
 
 const BookingForm = () => {
   const route = useRoute();
   const { hotel } = route.params;
 
+  const [showRoomTypeModal, setShowRoomTypeModal] = useState(false);
+  const [showCheckInPicker, setShowCheckInPicker] = useState(false);
+  const [showCheckOutPicker, setShowCheckOutPicker] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     surname: "",
@@ -27,37 +32,28 @@ const BookingForm = () => {
     phone: "",
     checkIn: new Date(),
     checkOut: new Date(new Date().setDate(new Date().getDate() + 3)),
-    roomType: "Deluxe",
+    roomType: "Standart",
     numberOfRooms: 1,
     numberOfGuests: 1,
   });
 
-  const [showCheckInPicker, setShowCheckInPicker] = useState(false);
-  const [showCheckOutPicker, setShowCheckOutPicker] = useState(false);
+  const roomTypesCost = {
+    Standart: 1,
+    Deluxe: 1.2,
+    Superior: 1.5,
+  };
 
   const calculateTotal = () => {
     const nights = Math.ceil(
       (formData.checkOut - formData.checkIn) / (1000 * 60 * 60 * 24)
     );
-    return hotel.price * formData.numberOfRooms * nights;
+    const multiplier = roomTypesCost[formData.roomType] || 1;
+    return hotel.price * formData.numberOfRooms * nights * multiplier;
   };
 
-  const formatDate = date => {
-    const months = [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
-    ];
-    return `${months[date.getMonth()]} ${date.getDate()}`;
+  const handleRoomTypeSelect = type => {
+    setFormData(prev => ({ ...prev, roomType: type }));
+    setShowRoomTypeModal(false);
   };
 
   const handleDateChange = (event, selectedDate, type) => {
@@ -155,7 +151,10 @@ const BookingForm = () => {
             {/* Room Type Selector */}
             <View style={styles.inputContainer}>
               <Text style={styles.label}>Room Type</Text>
-              <TouchableOpacity style={styles.selector}>
+              <TouchableOpacity
+                style={styles.selector}
+                onPress={() => setShowRoomTypeModal(true)}
+              >
                 <Text>{formData.roomType}</Text>
                 <MaterialIcons
                   name="keyboard-arrow-down"
@@ -164,6 +163,33 @@ const BookingForm = () => {
                 />
               </TouchableOpacity>
             </View>
+
+            {/* Room Type Modal */}
+            <Modal
+              visible={showRoomTypeModal}
+              transparent
+              animationType="slide"
+            >
+              <View style={styles.modalContainer}>
+                <View style={styles.modalContent}>
+                  {Object.keys(roomTypesCost).map(type => (
+                    <TouchableOpacity
+                      key={type}
+                      style={styles.modalOption}
+                      onPress={() => handleRoomTypeSelect(type)}
+                    >
+                      <Text style={styles.modalText}>{type}</Text>
+                    </TouchableOpacity>
+                  ))}
+                  <TouchableOpacity
+                    style={styles.modalClose}
+                    onPress={() => setShowRoomTypeModal(false)}
+                  >
+                    <Text style={styles.modalCloseText}>Close</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            </Modal>
 
             {/* Number of Rooms */}
             <View style={styles.rowContainer}>
@@ -332,6 +358,34 @@ const styles = StyleSheet.create({
     padding: 12,
     backgroundColor: COLORS.inActiveBackground,
   },
+  modalContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0,0,0,0.5)",
+  },
+  modalContent: {
+    width: "80%",
+    backgroundColor: "#fff",
+    borderRadius: 20,
+    padding: 20,
+  },
+  modalOption: {
+    padding: PADDING_SM,
+    borderBottomWidth: 1,
+    borderColor: COLORS.inActiveLine,
+  },
+  modalText: { fontSize: 16, fontFamily: "Poppins-Medium" },
+  modalClose: {
+    padding: PADDING_SM,
+    alignItems: "center",
+    backgroundColor: COLORS.primary,
+    marginTop: 20,
+    borderRadius: 13,
+    width: "70%",
+    alignSelf: "center",
+  },
+  modalCloseText: { color: "#fff", fontFamily: "Poppins-SemiBold" },
   counterContainer: {
     flexDirection: "row",
     alignItems: "center",

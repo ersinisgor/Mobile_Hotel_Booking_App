@@ -45,7 +45,7 @@ const BookSummary = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container} edges={["top"]}>
+    <SafeAreaView style={styles.container} edges={["top", "bottom"]}>
       <ScrollView style={styles.content}>
         {/* Personal Information */}
         <View style={styles.section}>

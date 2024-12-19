@@ -7,6 +7,24 @@ export const shuffleArray = array => {
     .map(({ sort, ...item }) => item);
 };
 
+export const formatDate = date => {
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  return `${months[date.getMonth()]} ${date.getDate()}`;
+};
+
 const uniqueFacilities = Array.from(
   new Set(hotels.flatMap(hotel => hotel.facilities))
 );
