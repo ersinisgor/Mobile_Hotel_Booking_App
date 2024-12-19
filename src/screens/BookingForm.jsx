@@ -14,6 +14,7 @@ import DateTimePicker from "@react-native-community/datetimepicker";
 import { COLORS, PADDING, PADDING_SM } from "../utils/constants";
 import Footer from "../components/Footer";
 import { SafeAreaView } from "react-native-safe-area-context";
+import CheckRow from "../components/CheckRow";
 
 const BookingForm = () => {
   const route = useRoute();
@@ -143,36 +144,13 @@ const BookingForm = () => {
           </View>
           <View style={styles.downContainer}>
             {/* Check-in/Check-out Dates */}
-            <View style={styles.rowContainer}>
-              <View style={styles.halfInput}>
-                <Text style={styles.label}>Check in</Text>
-                <TouchableOpacity
-                  style={styles.dateButton}
-                  onPress={() => setShowCheckInPicker(true)}
-                >
-                  <Text>{formatDate(formData.checkIn)}</Text>
-                  <MaterialIcons
-                    name="calendar-today"
-                    size={20}
-                    color={COLORS.grayFont}
-                  />
-                </TouchableOpacity>
-              </View>
-              <View style={styles.halfInput}>
-                <Text style={styles.label}>Check out</Text>
-                <TouchableOpacity
-                  style={styles.dateButton}
-                  onPress={() => setShowCheckOutPicker(true)}
-                >
-                  <Text>{formatDate(formData.checkOut)}</Text>
-                  <MaterialIcons
-                    name="calendar-today"
-                    size={20}
-                    color={COLORS.grayFont}
-                  />
-                </TouchableOpacity>
-              </View>
-            </View>
+            <CheckRow
+              touchable={true}
+              textCheckIn={formatDate(formData.checkIn)}
+              textCheckOut={formatDate(formData.checkOut)}
+              onPressCheckIn={() => setShowCheckInPicker(true)}
+              onPressCheckOut={() => setShowCheckOutPicker(true)}
+            />
 
             {/* Room Type Selector */}
             <View style={styles.inputContainer}>

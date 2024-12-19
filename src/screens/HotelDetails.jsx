@@ -217,20 +217,6 @@ const HotelDetails = () => {
       </ScrollView>
 
       {/* Footer */}
-      {/* <View style={styles.bottomBar}>
-        <View style={styles.priceContainer}>
-          <Text style={styles.price}>$ {hotel.price}</Text>
-          <Text style={styles.priceUnit}>/night</Text>
-        </View>
-        <TouchableOpacity
-          style={styles.bookButton}
-          onPress={() => {
-            navigation.navigate("BookingForm", { hotel });
-          }}
-        >
-          <Text style={styles.bookButtonText}>Book now</Text>
-        </TouchableOpacity>
-      </View> */}
       <Footer hotel={hotel} title="Book now" navigation />
     </SafeAreaView>
   );

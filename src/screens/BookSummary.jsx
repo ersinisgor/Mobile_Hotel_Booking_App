@@ -12,6 +12,7 @@ import { useRoute, useNavigation } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS, PADDING_SM } from "../utils/constants";
 import HotelCard from "../components/HotelCard";
+import CheckRow from "../components/CheckRow";
 
 const BookSummary = () => {
   const navigation = useNavigation();
@@ -70,31 +71,11 @@ const BookSummary = () => {
 
           {/* Booking Details */}
           <View style={styles.bookingDetails}>
-            <View style={styles.dateContainer}>
-              <View style={styles.dateBox}>
-                {/* <Text style={styles.dateLabel}>Check in</Text> */}
-                <Text style={styles.date}>{formatDate(formData.checkIn)}</Text>
-                <MaterialIcons
-                  name="calendar-today"
-                  size={20}
-                  color={COLORS.grayFont}
-                />
-              </View>
-              <MaterialIcons
-                name="arrow-forward"
-                size={20}
-                color={COLORS.grayFont}
-              />
-              <View style={styles.dateBox}>
-                {/* <Text style={styles.dateLabel}>Check out</Text> */}
-                <Text style={styles.date}>{formatDate(formData.checkOut)}</Text>
-                <MaterialIcons
-                  name="calendar-today"
-                  size={20}
-                  color={COLORS.grayFont}
-                />
-              </View>
-            </View>
+            <CheckRow
+              textCheckIn={formatDate(formData.checkIn)}
+              textCheckOut={formatDate(formData.checkOut)}
+              summary={true}
+            />
 
             <View style={styles.infoRow}>
               <Text style={styles.infoLabel}>Room Type</Text>
@@ -227,30 +208,6 @@ const styles = StyleSheet.create({
   },
   bookingDetails: {
     gap: 12,
-  },
-  dateContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    paddingVertical: 8,
-  },
-  dateBox: {
-    flex: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: 12,
-    backgroundColor: COLORS.inActiveBackground,
-    borderRadius: 10,
-  },
-  dateLabel: {
-    fontSize: 14,
-    fontFamily: "Poppins-Regular",
-    color: COLORS.grayFont,
-  },
-  date: {
-    fontSize: 14,
-    fontFamily: "Poppins-Medium",
   },
   totalRow: {
     borderTopWidth: 1,
