@@ -1,16 +1,18 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 import { COLORS, PADDING_SM, WIDTH } from "../utils/constants";
 
-const HotelCard = ({ hotel, onPressFavorite, onPressCard }) => {
-  return (
-    <TouchableOpacity
-      style={styles.container}
-      onPress={() => onPressCard?.(hotel)}
-      activeOpacity={0.7}
-    >
-      <Image source={hotel.image} style={styles.image} />
+const HotelCard = ({ hotel, onPressFavorite, onPressCard, touchable }) => {
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const toggleFavorite = () => {
+    setIsFavorite(prev => !prev);
+  };
+
+  const CardContent = (
+    <>
+      <Image source={hotel.images[0]} style={styles.image} />
       <View style={styles.content}>
         <View style={styles.header}>
           <View style={styles.titleContainer}>
@@ -21,12 +23,16 @@ const HotelCard = ({ hotel, onPressFavorite, onPressCard }) => {
               {hotel.location}
             </Text>
           </View>
+
           <TouchableOpacity
-            onPress={() => onPressFavorite?.(hotel.id)}
+            // onPress={() => onPressFavorite?.(hotel.id)}
+            onPress={() => {
+              toggleFavorite(), onPressFavorite?.(hotel.id);
+            }}
             hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
           >
             <Ionicons
-              name={hotel.isFavorite ? "heart" : "heart-outline"}
+              name={isFavorite ? "heart" : "heart-outline"}
               size={22}
               color={COLORS.primary}
             />
@@ -48,6 +54,19 @@ const HotelCard = ({ hotel, onPressFavorite, onPressCard }) => {
           </View>
         </View>
       </View>
+    </>
+  );
+
+  if (!touchable) {
+    return <View style={styles.container}>{CardContent}</View>;
+  }
+
+  return (
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => onPressCard?.(hotel)}
+    >
+      {CardContent}
     </TouchableOpacity>
   );
 };
@@ -61,6 +80,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     overflow: "hidden",
     padding: PADDING_SM,
+    marginBottom: PADDING_SM,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,

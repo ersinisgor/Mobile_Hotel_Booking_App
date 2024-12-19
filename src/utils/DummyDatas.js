@@ -110,6 +110,7 @@ const hotels = [
     ],
     latitude: 25.756043,
     longitude: -80.200876,
+    isFavorite: false,
   },
   {
     id: "2",
@@ -197,6 +198,7 @@ const hotels = [
     ],
     latitude: 39.1911,
     longitude: -106.8175,
+    isFavorite: false,
   },
   {
     id: "3",
@@ -325,6 +327,7 @@ const hotels = [
     ],
     latitude: 40.7128,
     longitude: -74.006,
+    isFavorite: false,
   },
   {
     id: "4",
@@ -454,6 +457,7 @@ const hotels = [
     ],
     latitude: 33.4484,
     longitude: -112.074,
+    isFavorite: false,
   },
   {
     id: "5",
@@ -567,6 +571,7 @@ const hotels = [
     ],
     latitude: 46.2044,
     longitude: 6.1432,
+    isFavorite: false,
   },
   {
     id: "6",
@@ -692,6 +697,7 @@ const hotels = [
     ],
     latitude: -8.3405,
     longitude: 115.1398,
+    isFavorite: false,
   },
   {
     id: "7",
@@ -780,6 +786,7 @@ const hotels = [
     ],
     latitude: 3.2028,
     longitude: 73.2207,
+    isFavorite: false,
   },
   {
     id: "8",
@@ -843,6 +850,7 @@ const hotels = [
     ],
     latitude: 43.7711,
     longitude: 11.2486,
+    isFavorite: false,
   },
   {
     id: "9",
@@ -922,6 +930,7 @@ const hotels = [
     ],
     latitude: 51.5074,
     longitude: -0.1278,
+    isFavorite: false,
   },
   {
     id: "10",
@@ -1045,6 +1054,7 @@ const hotels = [
     ],
     latitude: -33.8688,
     longitude: 151.2093,
+    isFavorite: false,
   },
   {
     id: "11",
@@ -1149,6 +1159,7 @@ const hotels = [
     ],
     latitude: 37.9838,
     longitude: 23.7275,
+    isFavorite: false,
   },
   {
     id: "12",
@@ -1292,6 +1303,7 @@ const hotels = [
     ],
     latitude: 6.5244,
     longitude: 3.3792,
+    isFavorite: false,
   },
   {
     id: "13",
@@ -1364,6 +1376,7 @@ const hotels = [
     ],
     latitude: 6.4654,
     longitude: 3.4064,
+    isFavorite: false,
   },
   {
     id: "14",
@@ -1476,6 +1489,7 @@ const hotels = [
     ],
     latitude: 7.8804,
     longitude: 98.3923,
+    isFavorite: false,
   },
   {
     id: "15",
@@ -1579,6 +1593,7 @@ const hotels = [
     ],
     latitude: 25.2048,
     longitude: 55.2708,
+    isFavorite: false,
   },
   {
     id: "16",
@@ -1732,6 +1747,7 @@ const hotels = [
     ],
     latitude: -8.4095,
     longitude: 115.1889,
+    isFavorite: false,
   },
   {
     id: "17",
@@ -1795,6 +1811,7 @@ const hotels = [
     ],
     latitude: 40.7128,
     longitude: -74.006,
+    isFavorite: false,
   },
   {
     id: "18",
@@ -1924,6 +1941,7 @@ const hotels = [
     ],
     latitude: -45.0312,
     longitude: 168.6626,
+    isFavorite: false,
   },
   {
     id: "19",
@@ -2043,6 +2061,7 @@ const hotels = [
     ],
     latitude: 21.1619,
     longitude: -86.8515,
+    isFavorite: false,
   },
   {
     id: "20",
@@ -2150,6 +2169,7 @@ const hotels = [
     ],
     latitude: 46.0207,
     longitude: 7.7491,
+    isFavorite: false,
   },
 ];
 

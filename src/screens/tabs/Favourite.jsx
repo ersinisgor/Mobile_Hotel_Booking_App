@@ -12,7 +12,7 @@ const Favourite = () => {
     location: "Ikoyi, Lagos",
     price: 140000,
     rating: 4.8,
-    image: require("../../../assets/images/image1.jpg"),
+    images: [require("../../../assets/images/image1.jpg")],
     isFavorite: true,
   };
 
@@ -35,6 +35,7 @@ const Favourite = () => {
           hotel={hotel}
           onPressFavorite={handlePressFavorite}
           onPressCard={handlePressCard}
+          touchable={true}
         />
       </View>
     </SafeAreaView>

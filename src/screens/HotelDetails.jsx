@@ -18,6 +18,7 @@ import Footer from "../components/Footer";
 
 const HotelDetails = () => {
   const navigation = useNavigation();
+  const [isFavorite, setIsFavorite] = useState(false);
   const [showReviews, setShowReviews] = useState(false);
   const [showMoreReviews, setShowMoreReviews] = useState(false);
 
@@ -45,6 +46,10 @@ const HotelDetails = () => {
     </View>
   );
 
+  const toggleFavorite = () => {
+    setIsFavorite(prev => !prev);
+  };
+
   return (
     <SafeAreaView style={styles.container} edges={["bottom", "top"]}>
       <ScrollView
@@ -64,8 +69,15 @@ const HotelDetails = () => {
           >
             <MaterialIcons name="arrow-back" size={24} color="white" />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.favoriteButton}>
-            <MaterialIcons name="favorite-border" size={24} color="white" />
+          <TouchableOpacity
+            style={styles.favoriteButton}
+            onPress={toggleFavorite}
+          >
+            <MaterialIcons
+              name={isFavorite ? "favorite" : "favorite-border"}
+              size={24}
+              color="white"
+            />
           </TouchableOpacity>
         </View>
 

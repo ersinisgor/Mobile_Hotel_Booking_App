@@ -6,11 +6,12 @@ import {
   TouchableOpacity,
   ScrollView,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 import { useRoute, useNavigation } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS, PADDING_SM } from "../utils/constants";
+import HotelCard from "../components/HotelCard";
 
 const BookSummary = () => {
   const navigation = useNavigation();
@@ -65,31 +66,7 @@ const BookSummary = () => {
 
         {/* Hotel Card */}
         <View style={styles.hotelCard}>
-          <View style={styles.hotelInfo}>
-            <Image source={hotel.images[0]} style={styles.hotelImage} />
-            <View style={styles.hotelDetails}>
-              <View style={styles.hotelHeader}>
-                <Text style={styles.hotelName}>{hotel.name}</Text>
-                <TouchableOpacity>
-                  <Ionicons
-                    name="heart-outline"
-                    size={24}
-                    color={COLORS.primary}
-                  />
-                </TouchableOpacity>
-              </View>
-              <Text style={styles.location}>{hotel.location}</Text>
-              <View style={styles.priceRating}>
-                <Text style={styles.price}>
-                  NGN {hotel.price.toLocaleString()}/night
-                </Text>
-                <View style={styles.rating}>
-                  <MaterialIcons name="star" size={16} color="#FFD700" />
-                  <Text style={styles.ratingText}>{hotel.rating}</Text>
-                </View>
-              </View>
-            </View>
-          </View>
+          <HotelCard hotel={hotel} touchable={false} />
 
           {/* Booking Details */}
           <View style={styles.bookingDetails}>
@@ -134,7 +111,7 @@ const BookSummary = () => {
             <View style={[styles.infoRow, styles.totalRow]}>
               <Text style={styles.totalLabel}>Total</Text>
               <Text style={styles.totalValue}>
-                NGN {calculateTotal().toLocaleString()}
+                $ {calculateTotal().toLocaleString()}
               </Text>
             </View>
           </View>
