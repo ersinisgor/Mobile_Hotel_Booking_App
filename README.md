@@ -1,4 +1,4 @@
-# Project Name: **Hotel Booking App**
+# Hotel Booking App
 
 <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
   <img src="./assets/screenshots/sc1.jpg" alt="Intro" style="height: 340px; margin-right: 10px;">
