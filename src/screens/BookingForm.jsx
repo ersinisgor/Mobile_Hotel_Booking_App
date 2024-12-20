@@ -82,23 +82,31 @@ const BookingForm = () => {
       ...formData,
       totalPrice: calculateTotal(),
       id: uuidv4(),
+      hotelData: {
+        images: hotel.images,
+        name: hotel.name,
+        location: hotel.location,
+        isFavorite: hotel.isFavorite,
+        price: hotel.price,
+        rating: hotel.rating,
+      },
     };
 
-    const hotelData = {
-      images: hotel.images,
-      name: hotel.name,
-      location: hotel.location,
-      isFavorite: hotel.isFavorite,
-      price: hotel.price,
-      rating: hotel.rating,
-    };
+    // const hotelData = {
+    //   images: hotel.images,
+    //   name: hotel.name,
+    //   location: hotel.location,
+    //   isFavorite: hotel.isFavorite,
+    //   price: hotel.price,
+    //   rating: hotel.rating,
+    // };
 
     // Save current booking to global state
     dispatch(saveBooking(bookingData));
 
     // Navigate to BookingSummary
-    navigation.navigate("BookSummary", { bookingData, hotelData });
-    console.log("Booking Data:", bookingData);
+    navigation.navigate("BookSummary", { bookingData });
+    // console.log("Booking Data:", bookingData);
   };
 
   return (

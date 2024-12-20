@@ -83,6 +83,7 @@ const MainNavigation = () => {
               shadowOpacity: 0,
               borderBottomWidth: 0,
             },
+            headerTitleAlign: "center",
           }}
         />
         <Stack.Screen

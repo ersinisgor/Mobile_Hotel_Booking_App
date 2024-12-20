@@ -163,7 +163,12 @@ const Home = () => {
             </ScrollView>
             <View style={styles.seeAllContainer}>
               <TouchableOpacity
-                onPress={() => navigation.navigate("ListHotels")}
+                onPress={() =>
+                  navigation.navigate("ListHotels", {
+                    displayHotels,
+                    activeCategory,
+                  })
+                }
               >
                 <Text style={styles.seeAll}>See all</Text>
               </TouchableOpacity>

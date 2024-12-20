@@ -4,17 +4,20 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import HotelCard from "../../components/HotelCard";
 
 import { COLORS, PADDING_SM } from "../../utils/constants";
+import ListItems from "../../components/ListItems";
 
 const Favourite = () => {
-  const hotel = {
-    id: "1",
-    name: "Estabeez Hotel",
-    location: "Ikoyi, Lagos",
-    price: 140000,
-    rating: 4.8,
-    images: [require("../../../assets/images/image1.jpg")],
-    isFavorite: true,
-  };
+  const hotels = [
+    {
+      id: "1",
+      name: "Estabeez Hotel",
+      location: "Ikoyi, Lagos",
+      price: 140000,
+      rating: 4.8,
+      images: [require("../../../assets/images/image1.jpg")],
+      isFavorite: true,
+    },
+  ];
 
   const handlePressFavorite = id => {
     console.log("Toggle favorite for hotel:", id);
@@ -24,20 +27,39 @@ const Favourite = () => {
     console.log("Navigate to hotel details:", hotel);
   };
 
+  const renderHotelCard = ({ item: hotel }) => (
+    <HotelCard
+      key={hotel.id}
+      hotel={hotel}
+      onPressFavorite={handlePressFavorite}
+      onPressCard={handlePressCard}
+      touchable={true}
+    />
+  );
+
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
-      <View style={styles.header}>
+    <SafeAreaView
+      style={{ flex: 1, backgroundColor: "#fff", padding: PADDING_SM }}
+    >
+      <ListItems
+        title="Favourites"
+        listDatas={hotels}
+        renderItem={renderHotelCard} // Pass the render function for each item
+      />
+      {/* <View style={styles.header}>
         <Text style={styles.headerTitle}>Favourites</Text>
-        {/* <View style={{ width: 24 }} /> Empty view for spacing */}
       </View>
       <View style={{ padding: 16 }}>
-        <HotelCard
-          hotel={hotel}
-          onPressFavorite={handlePressFavorite}
-          onPressCard={handlePressCard}
-          touchable={true}
-        />
-      </View>
+        {hotels.map(hotel => (
+          <HotelCard
+            key={hotel.id}
+            hotel={hotel}
+            onPressFavorite={handlePressFavorite}
+            onPressCard={handlePressCard}
+            touchable={true}
+          />
+        ))}
+      </View> */}
     </SafeAreaView>
   );
 };

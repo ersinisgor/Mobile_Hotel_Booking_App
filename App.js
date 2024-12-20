@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { Text, TextInput } from "react-native";
 import MainNavigation from "./src/navigation/MainNavigation";
 import { Provider } from "react-redux";
+
 import store from "./src/redux/store";
 
 SplashScreen.preventAutoHideAsync();

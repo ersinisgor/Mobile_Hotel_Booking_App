@@ -8,7 +8,6 @@ import {
   Modal,
 } from "react-native";
 import React, { useState } from "react";
-import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 import { useRoute, useNavigation } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS, HEIGHT, PADDING_SM } from "../utils/constants";
@@ -22,12 +21,14 @@ const BookSummary = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
   const route = useRoute();
-  const { hotelData, bookingData } = route.params;
+  const { bookingData } = route.params;
   const [showConfirmPaymentModal, setShowConfirmPaymentModal] = useState(false);
 
-  const confirmPayment = () => {
+  const confirmPayment = async () => {
     // Add to previous bookings
     dispatch(addPreviousBooking(bookingData));
+    // await AsyncStorage.setItem("previousBookings", JSON.stringify(bookingData));
+    console.log("bookingData", bookingData);
     setShowConfirmPaymentModal(true);
   };
 
@@ -59,7 +60,7 @@ const BookSummary = () => {
 
         {/* Hotel Card */}
         <View style={styles.hotelCard}>
-          <HotelCard hotel={hotelData} touchable={false} />
+          <HotelCard hotel={bookingData.hotelData} touchable={false} />
 
           {/* Booking Details */}
           <View style={styles.bookingDetails}>
