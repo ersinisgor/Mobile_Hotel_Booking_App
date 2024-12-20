@@ -17,8 +17,14 @@ import Footer from "../components/Footer";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CheckRow from "../components/CheckRow";
 import { formatDate } from "../utils/helpers";
+import { useDispatch } from "react-redux";
+import { saveBooking, addPreviousBooking } from "../redux/bookingSlice";
+import "react-native-get-random-values";
+import { v4 as uuidv4 } from "uuid";
 
 const BookingForm = () => {
+  const dispatch = useDispatch();
+  const navigation = useNavigation();
   const route = useRoute();
   const { hotel } = route.params;
 
@@ -35,6 +41,7 @@ const BookingForm = () => {
     roomType: "Standart",
     numberOfRooms: 1,
     numberOfGuests: 1,
+    // totalPrice: null,
   });
 
   const roomTypesCost = {
@@ -71,7 +78,27 @@ const BookingForm = () => {
   };
 
   const handleContinue = () => {
-    console.log("Form Data:", formData);
+    const bookingData = {
+      ...formData,
+      totalPrice: calculateTotal(),
+      id: uuidv4(),
+    };
+
+    const hotelData = {
+      images: hotel.images,
+      name: hotel.name,
+      location: hotel.location,
+      isFavorite: hotel.isFavorite,
+      price: hotel.price,
+      rating: hotel.rating,
+    };
+
+    // Save current booking to global state
+    dispatch(saveBooking(bookingData));
+
+    // Navigate to BookingSummary
+    navigation.navigate("BookSummary", { bookingData, hotelData });
+    console.log("Booking Data:", bookingData);
   };
 
   return (
@@ -284,8 +311,9 @@ const BookingForm = () => {
 
       <Footer
         title="Continue"
-        hotel={hotel}
-        formData={formData}
+        // hotel={hotel}
+        data={formData}
+        handleClick={handleContinue}
         price={calculateTotal().toLocaleString()}
       />
     </SafeAreaView>

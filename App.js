@@ -3,6 +3,8 @@ import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import { Text, TextInput } from "react-native";
 import MainNavigation from "./src/navigation/MainNavigation";
+import { Provider } from "react-redux";
+import store from "./src/redux/store";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -15,8 +17,6 @@ export default function App() {
     "Poppins-ExtraBold": require("./assets/fonts/Poppins-ExtraBold.ttf"),
     "Poppins-Medium": require("./assets/fonts/Poppins-Medium.ttf"),
     "Poppins-SemiBold": require("./assets/fonts/Poppins-SemiBold.ttf"),
-    "Lato-Regular": require("./assets/fonts/Lato-Regular.ttf"),
-    "Lato-Bold": require("./assets/fonts/Lato-Bold.ttf"),
   });
 
   useEffect(() => {
@@ -35,5 +35,9 @@ export default function App() {
   TextInput.defaultProps = TextInput.defaultProps || {};
   TextInput.defaultProps.style = { fontFamily: "Poppins-Regular" };
 
-  return <MainNavigation />;
+  return (
+    <Provider store={store}>
+      <MainNavigation />
+    </Provider>
+  );
 }

@@ -5,43 +5,35 @@ import {
   Image,
   TouchableOpacity,
   ScrollView,
+  Modal,
 } from "react-native";
 import React, { useState } from "react";
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 import { useRoute, useNavigation } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { COLORS, PADDING_SM } from "../utils/constants";
+import { COLORS, HEIGHT, PADDING_SM } from "../utils/constants";
 import HotelCard from "../components/HotelCard";
 import CheckRow from "../components/CheckRow";
+import { formatDate } from "../utils/helpers";
+import { useDispatch } from "react-redux";
+import { addPreviousBooking } from "../redux/bookingSlice";
 
 const BookSummary = () => {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
   const route = useRoute();
-  const { hotel, formData } = route.params;
+  const { hotelData, bookingData } = route.params;
+  const [showConfirmPaymentModal, setShowConfirmPaymentModal] = useState(false);
 
-  const formatDate = date => {
-    const months = [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
-    ];
-    return `${months[date.getMonth()]} ${date.getDate()}`;
+  const confirmPayment = () => {
+    // Add to previous bookings
+    dispatch(addPreviousBooking(bookingData));
+    setShowConfirmPaymentModal(true);
   };
 
-  const calculateTotal = () => {
-    const nights = Math.ceil(
-      (formData.checkOut - formData.checkIn) / (1000 * 60 * 60 * 24)
-    );
-    return hotel.price * formData.numberOfRooms * nights;
+  const closeModal = () => {
+    setShowConfirmPaymentModal(false);
+    navigation.navigate("Tabs");
   };
 
   return (
@@ -53,55 +45,76 @@ const BookSummary = () => {
             <Text style={styles.infoLabel}>Name</Text>
             <Text
               style={styles.infoValue}
-            >{`${formData.firstName} ${formData.surname}`}</Text>
+            >{`${bookingData.firstName} ${bookingData.surname}`}</Text>
           </View>
           <View style={styles.infoRow}>
             <Text style={styles.infoLabel}>Email</Text>
-            <Text style={styles.infoValue}>{formData.email}</Text>
+            <Text style={styles.infoValue}>{bookingData.email}</Text>
           </View>
           <View style={styles.infoRow}>
             <Text style={styles.infoLabel}>Phone</Text>
-            <Text style={styles.infoValue}>{formData.phone}</Text>
+            <Text style={styles.infoValue}>{bookingData.phone}</Text>
           </View>
         </View>
 
         {/* Hotel Card */}
         <View style={styles.hotelCard}>
-          <HotelCard hotel={hotel} touchable={false} />
+          <HotelCard hotel={hotelData} touchable={false} />
 
           {/* Booking Details */}
           <View style={styles.bookingDetails}>
             <CheckRow
-              textCheckIn={formatDate(formData.checkIn)}
-              textCheckOut={formatDate(formData.checkOut)}
+              textCheckIn={formatDate(bookingData.checkIn)}
+              textCheckOut={formatDate(bookingData.checkOut)}
               summary={true}
             />
 
             <View style={styles.infoRow}>
               <Text style={styles.infoLabel}>Room Type</Text>
-              <Text style={styles.infoValue}>{formData.roomType}</Text>
+              <Text style={styles.infoValue}>{bookingData.roomType}</Text>
             </View>
             <View style={styles.infoRow}>
               <Text style={styles.infoLabel}>Guest</Text>
-              <Text style={styles.infoValue}>{formData.numberOfGuests}</Text>
+              <Text style={styles.infoValue}>{bookingData.numberOfGuests}</Text>
             </View>
             <View style={styles.infoRow}>
               <Text style={styles.infoLabel}>Number of rooms</Text>
-              <Text style={styles.infoValue}>{formData.numberOfRooms}</Text>
+              <Text style={styles.infoValue}>{bookingData.numberOfRooms}</Text>
             </View>
             <View style={[styles.infoRow, styles.totalRow]}>
               <Text style={styles.totalLabel}>Total</Text>
-              <Text style={styles.totalValue}>
-                $ {calculateTotal().toLocaleString()}
-              </Text>
+              <Text style={styles.totalValue}>$ {bookingData.totalPrice}</Text>
             </View>
           </View>
         </View>
+
+        {/* Confirm Payment Modal */}
+        <Modal
+          visible={showConfirmPaymentModal}
+          transparent
+          animationType="slide"
+        >
+          <View style={styles.modalContainer}>
+            <View style={styles.modalContent}>
+              <Image
+                source={require("../../assets/successful.jpg")}
+                style={styles.modalImage}
+              />
+              <Text style={styles.modalTitle}>Payment successfull !</Text>
+              <Text style={styles.modalText}>
+                Hi John, Your booking was successful.
+              </Text>
+              <TouchableOpacity style={styles.modalClose} onPress={closeModal}>
+                <Text style={styles.modalCloseText}>Done</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Modal>
       </ScrollView>
 
       {/* Confirm Payment Button */}
       <View style={styles.footer}>
-        <TouchableOpacity style={styles.confirmButton}>
+        <TouchableOpacity style={styles.confirmButton} onPress={confirmPayment}>
           <Text style={styles.confirmButtonText}>Confirm payment</Text>
         </TouchableOpacity>
       </View>
@@ -239,6 +252,55 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 16,
     fontFamily: "Poppins-SemiBold",
+  },
+  modalContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0,0,0,0.5)",
+  },
+  modalContent: {
+    width: "80%",
+    backgroundColor: "#fff",
+    borderRadius: 20,
+    paddingHorizontal: PADDING_SM,
+    paddingVertical: HEIGHT / 15,
+  },
+  modalImage: {
+    alignSelf: "center",
+    marginBottom: HEIGHT / 15,
+  },
+  modalTitle: {
+    fontSize: 20,
+    fontFamily: "Poppins-SemiBold",
+    textAlign: "center",
+    marginBottom: HEIGHT * 0.01,
+  },
+  modalClose: {
+    padding: PADDING_SM,
+    alignItems: "center",
+    backgroundColor: COLORS.primary,
+    marginTop: HEIGHT / 15,
+    borderRadius: 13,
+    width: "70%",
+    alignSelf: "center",
+  },
+  modalCloseText: { color: "#fff", fontFamily: "Poppins-SemiBold" },
+  counterContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    borderWidth: 1,
+    borderColor: COLORS.inActiveLine,
+    borderRadius: 10,
+    padding: 8,
+    backgroundColor: COLORS.inActiveBackground,
+  },
+  modalText: {
+    fontSize: 14,
+    color: COLORS.inActiveFont,
+    fontFamily: "Poppins-SemiBold",
+    textAlign: "center",
   },
 });
 

@@ -3,8 +3,8 @@ import React from "react";
 import { COLORS, PADDING_SM } from "../utils/constants";
 import { useNavigation } from "@react-navigation/native";
 
-const Footer = ({ title, hotel, price, formData }) => {
-  const navigation = useNavigation();
+const Footer = ({ title, data, handleClick, price }) => {
+  // const navigation = useNavigation();
   return (
     <View style={styles.bottomBar}>
       <View style={styles.priceContainer}>
@@ -21,19 +21,12 @@ const Footer = ({ title, hotel, price, formData }) => {
           </View>
         ) : (
           <>
-            <Text style={styles.price}>$ {hotel.price}</Text>
+            <Text style={styles.price}>$ {data.price}</Text>
             <Text style={styles.priceUnit}>/night</Text>
           </>
         )}
       </View>
-      <TouchableOpacity
-        style={styles.bookButton}
-        onPress={() => {
-          title === "Continue"
-            ? navigation.navigate("BookSummary", { hotel, formData })
-            : navigation.navigate("BookingForm", { hotel });
-        }}
-      >
+      <TouchableOpacity style={styles.bookButton} onPress={handleClick}>
         <Text style={styles.bookButtonText}>{title}</Text>
       </TouchableOpacity>
     </View>

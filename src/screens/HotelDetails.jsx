@@ -29,6 +29,10 @@ const HotelDetails = () => {
     ? hotel.reviews.slice(0, 15)
     : hotel.reviews.slice(0, 5);
 
+  // const handleClick = () => {
+  //   navigation.navigate("BookingForm", { hotel });
+  // };
+
   const renderReview = ({ item }) => (
     <View style={styles.reviewItem}>
       <View style={styles.reviewHeader}>
@@ -217,7 +221,14 @@ const HotelDetails = () => {
       </ScrollView>
 
       {/* Footer */}
-      <Footer hotel={hotel} title="Book now" navigation />
+      <Footer
+        data={hotel}
+        title="Book now"
+        handleClick={() => {
+          navigation.navigate("BookingForm", { hotel });
+        }}
+        // price={hotel.price}
+      />
     </SafeAreaView>
   );
 };
