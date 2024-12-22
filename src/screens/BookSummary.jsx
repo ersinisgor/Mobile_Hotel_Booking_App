@@ -21,7 +21,7 @@ const BookSummary = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
   const route = useRoute();
-  // const { bookingData } = route.params;
+  const { bookingHistory } = route.params;
   const bookingData = useSelector(state => state.booking.bookingObject);
   const checkInDate = new Date(bookingData.checkIn); // Convert back to Date object
   const checkOutDate = new Date(bookingData.checkOut);
@@ -35,7 +35,6 @@ const BookSummary = () => {
     // console.log("bookingData", bookingData);
     setShowConfirmPaymentModal(true);
   };
-
   const closeModal = () => {
     setShowConfirmPaymentModal(false);
     navigation.navigate("Tabs");
@@ -43,7 +42,7 @@ const BookSummary = () => {
 
   return (
     <SafeAreaView style={styles.container} edges={["top", "bottom"]}>
-      <ScrollView style={styles.content}>
+      <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
         {/* Personal Information */}
         <View style={styles.section}>
           <View style={styles.infoRow}>
@@ -118,11 +117,16 @@ const BookSummary = () => {
       </ScrollView>
 
       {/* Confirm Payment Button */}
-      <View style={styles.footer}>
-        <TouchableOpacity style={styles.confirmButton} onPress={confirmPayment}>
-          <Text style={styles.confirmButtonText}>Confirm payment</Text>
-        </TouchableOpacity>
-      </View>
+      {!bookingHistory && (
+        <View style={styles.footer}>
+          <TouchableOpacity
+            style={styles.confirmButton}
+            onPress={confirmPayment}
+          >
+            <Text style={styles.confirmButtonText}>Confirm payment</Text>
+          </TouchableOpacity>
+        </View>
+      )}
     </SafeAreaView>
   );
 };
@@ -178,6 +182,7 @@ const styles = StyleSheet.create({
     padding: PADDING_SM,
     borderWidth: 1,
     borderColor: COLORS.inActiveLine,
+    marginBottom: 30,
   },
   hotelInfo: {
     marginBottom: PADDING_SM,

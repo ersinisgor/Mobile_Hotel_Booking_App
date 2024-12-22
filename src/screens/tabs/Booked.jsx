@@ -17,9 +17,11 @@ import {
 import CustomButton from "../../components/CustomButton";
 import { COLORS, PADDING_SM } from "../../utils/constants";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import { useNavigation } from "@react-navigation/native";
 
 const Booked = () => {
   const dispatch = useDispatch();
+  const navigation = useNavigation();
 
   // Fetch previous bookings from Redux
   const previousBookings = useSelector(state => state.booking.previousBookings);
@@ -41,7 +43,16 @@ const Booked = () => {
   const renderBooking = ({ item }) => (
     <View style={styles.bookingRow}>
       <View style={styles.hotelCardContainer}>
-        <HotelCard hotel={item.hotelData} touchable={false} />
+        <HotelCard
+          hotel={item.hotelData}
+          touchable={true}
+          onPressCard={() => {
+            navigation.navigate("BookSummary", {
+              bookingId: item.id,
+              bookingHistory: true,
+            });
+          }}
+        />
       </View>
       <TouchableOpacity onPress={() => deleteBooking(item.id)}>
         <MaterialIcons name="delete-outline" size={30} color={COLORS.primary} />

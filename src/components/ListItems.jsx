@@ -24,6 +24,7 @@ const ListItems = ({ title, listDatas = [], renderItem }) => {
             keyExtractor={(item, index) => item?.id || index.toString()}
             renderItem={renderItem}
             contentContainerStyle={{ padding: 4 }}
+            showsVerticalScrollIndicator={false}
           />
         ) : (
           <Text style={styles.noItems}>No {title.toLowerCase()} found.</Text>
