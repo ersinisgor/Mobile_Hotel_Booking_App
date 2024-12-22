@@ -18,7 +18,7 @@ const ListHotels = () => {
   }, [activeCategory, navigation]);
 
   return (
-    <View style={{ flex: 1, padding: PADDING_SM, backgroundColor: "#fff" }}>
+    <View style={styles.container}>
       <FlatList
         data={displayHotels}
         renderItem={({ item }) => (
@@ -26,7 +26,7 @@ const ListHotels = () => {
         )}
         keyExtractor={item => item.id}
         contentContainerStyle={{ padding: 4 }}
-        showsVerticalScrollScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   );
@@ -34,6 +34,10 @@ const ListHotels = () => {
 
 export default ListHotels;
 
-const styles = StyleSheet.create({});
-
-// <HotelCard key={hotel.id} hotel={hotel} />
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: PADDING_SM,
+    backgroundColor: "#fff",
+  },
+});

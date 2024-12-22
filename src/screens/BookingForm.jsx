@@ -80,6 +80,8 @@ const BookingForm = () => {
   const handleContinue = () => {
     const bookingData = {
       ...formData,
+      checkIn: formData.checkIn.toISOString(), // Convert to ISO string
+      checkOut: formData.checkOut.toISOString(), // Convert to ISO string
       totalPrice: calculateTotal(),
       id: uuidv4(),
       hotelData: {

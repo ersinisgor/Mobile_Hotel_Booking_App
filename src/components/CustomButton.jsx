@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 48,
     paddingVertical: 10,
     borderRadius: 10,
+    // marginVertical: 10,
   },
   text: {
     color: "#fff",

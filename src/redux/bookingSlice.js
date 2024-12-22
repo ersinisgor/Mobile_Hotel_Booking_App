@@ -13,16 +13,28 @@ const bookingSlice = createSlice({
     saveBooking(state, action) {
       state.bookingObject = action.payload;
     },
-    addPreviousBooking(state, action) {
+    addPreviousBooking: (state, action) => {
       state.previousBookings.push(action.payload);
       AsyncStorage.setItem(
         "previousBookings",
         JSON.stringify(state.previousBookings)
       );
     },
-    clearAllPreviousBookings(state) {
+    clearAllPreviousBookings: state => {
       state.previousBookings = [];
-      AsyncStorage.removeItem("previousBookings");
+      AsyncStorage.setItem(
+        "previousBookings",
+        JSON.stringify(state.previousBookings)
+      );
+    },
+    deletePreviousBooking(state, action) {
+      state.previousBookings = state.previousBookings.filter(
+        booking => booking.id !== action.payload
+      );
+      AsyncStorage.setItem(
+        "previousBookings",
+        JSON.stringify(state.previousBookings)
+      );
     },
   },
   extraReducers: builder => {
@@ -56,7 +68,11 @@ export const initializePreviousBookings = createAsyncThunk(
   }
 );
 
-export const { addPreviousBooking, clearAllPreviousBookings, saveBooking } =
-  bookingSlice.actions;
+export const {
+  addPreviousBooking,
+  clearAllPreviousBookings,
+  saveBooking,
+  deletePreviousBooking,
+} = bookingSlice.actions;
 
 export default bookingSlice.reducer;

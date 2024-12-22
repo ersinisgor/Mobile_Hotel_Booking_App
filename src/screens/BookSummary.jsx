@@ -14,21 +14,25 @@ import { COLORS, HEIGHT, PADDING_SM } from "../utils/constants";
 import HotelCard from "../components/HotelCard";
 import CheckRow from "../components/CheckRow";
 import { formatDate } from "../utils/helpers";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addPreviousBooking } from "../redux/bookingSlice";
 
 const BookSummary = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
   const route = useRoute();
-  const { bookingData } = route.params;
+  // const { bookingData } = route.params;
+  const bookingData = useSelector(state => state.booking.bookingObject);
+  const checkInDate = new Date(bookingData.checkIn); // Convert back to Date object
+  const checkOutDate = new Date(bookingData.checkOut);
+
   const [showConfirmPaymentModal, setShowConfirmPaymentModal] = useState(false);
 
   const confirmPayment = async () => {
     // Add to previous bookings
     dispatch(addPreviousBooking(bookingData));
     // await AsyncStorage.setItem("previousBookings", JSON.stringify(bookingData));
-    console.log("bookingData", bookingData);
+    // console.log("bookingData", bookingData);
     setShowConfirmPaymentModal(true);
   };
 
@@ -65,8 +69,8 @@ const BookSummary = () => {
           {/* Booking Details */}
           <View style={styles.bookingDetails}>
             <CheckRow
-              textCheckIn={formatDate(bookingData.checkIn)}
-              textCheckOut={formatDate(bookingData.checkOut)}
+              textCheckIn={formatDate(checkInDate).toLocaleString()}
+              textCheckOut={formatDate(checkOutDate).toLocaleString()}
               summary={true}
             />
 
