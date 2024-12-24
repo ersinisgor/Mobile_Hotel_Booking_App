@@ -15,15 +15,24 @@ import { COLORS, HEIGHT, PADDING_SM, WIDTH } from "../utils/constants";
 import { facilities } from "../utils/helpers";
 import MapView, { Marker } from "react-native-maps";
 import Footer from "../components/Footer";
+import { hotels } from "../utils/dummyDatas";
+import { useDispatch, useSelector } from "react-redux";
+import { addFavorite, removeFavorite } from "../redux/favoritesSlice";
 
 const HotelDetails = () => {
   const navigation = useNavigation();
-  const [isFavorite, setIsFavorite] = useState(false);
+  const dispatch = useDispatch();
+  // const [isFavorite, setIsFavorite] = useState(false);
+
   const [showReviews, setShowReviews] = useState(false);
   const [showMoreReviews, setShowMoreReviews] = useState(false);
 
   const route = useRoute();
-  const { hotel } = route.params;
+  // const { hotel } = route.params;
+  const { hotelId } = route.params;
+  const favorites = useSelector(state => state.favorites);
+  const isFavorite = favorites.some(favHotel => favHotel.id === hotelId);
+  const hotel = hotels.find(hotel => hotel.id === hotelId);
 
   const displayedReviews = showMoreReviews
     ? hotel.reviews.slice(0, 15)
@@ -51,7 +60,13 @@ const HotelDetails = () => {
   );
 
   const toggleFavorite = () => {
-    setIsFavorite(prev => !prev);
+    if (isFavorite) {
+      dispatch(removeFavorite(hotel.id));
+      console.log(favorites);
+    } else {
+      dispatch(addFavorite(hotel));
+      console.log(favorites);
+    }
   };
 
   return (

@@ -2,12 +2,27 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 import { COLORS, PADDING_SM, WIDTH } from "../utils/constants";
+import { useDispatch, useSelector } from "react-redux";
+import { addFavorite, removeFavorite } from "../redux/favoritesSlice";
 
-const HotelCard = ({ hotel, onPressFavorite, onPressCard, touchable }) => {
-  const [isFavorite, setIsFavorite] = useState(false);
+const HotelCard = ({ hotel, onPressCard, touchable }) => {
+  const dispatch = useDispatch();
+  // const favorites = useSelector(state => state.favorites);
+  const favorites = useSelector(state => state.favorites);
+  const isFavorite = favorites.some(
+    favHotel =>
+      favHotel.id === hotel.id ||
+      (hotel.hotelData?.id && favHotel.id === hotel.hotelData.id)
+  );
 
   const toggleFavorite = () => {
-    setIsFavorite(prev => !prev);
+    if (isFavorite) {
+      dispatch(removeFavorite(hotel.id || hotel.hotelData?.id));
+      // console.log(favorites);
+    } else {
+      dispatch(addFavorite(hotel));
+      // console.log(favorites);
+    }
   };
 
   const CardContent = (
@@ -25,10 +40,7 @@ const HotelCard = ({ hotel, onPressFavorite, onPressCard, touchable }) => {
           </View>
 
           <TouchableOpacity
-            // onPress={() => onPressFavorite?.(hotel.id)}
-            onPress={() => {
-              toggleFavorite(), onPressFavorite?.(hotel.id);
-            }}
+            onPress={toggleFavorite}
             hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
           >
             <Ionicons
@@ -64,7 +76,9 @@ const HotelCard = ({ hotel, onPressFavorite, onPressCard, touchable }) => {
   return (
     <TouchableOpacity
       style={styles.container}
-      onPress={() => onPressCard?.(hotel)}
+      onPress={() => {
+        onPressCard?.(hotel);
+      }}
     >
       {CardContent}
     </TouchableOpacity>

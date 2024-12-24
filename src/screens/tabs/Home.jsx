@@ -68,7 +68,7 @@ const Home = () => {
   const renderHotelCard = ({ item }) => (
     <TouchableOpacity
       style={styles.hotelCard}
-      onPress={() => navigation.navigate("HotelDetails", { hotel: item })}
+      onPress={() => navigation.navigate("HotelDetails", { hotelId: item.id })}
     >
       <Image
         source={item.images[0]}

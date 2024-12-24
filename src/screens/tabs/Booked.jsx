@@ -25,6 +25,8 @@ const Booked = () => {
 
   // Fetch previous bookings from Redux
   const previousBookings = useSelector(state => state.booking.previousBookings);
+  // const favorites = useSelector(state => state.favorites);
+  // const isFavorite = favorites.some(favHotel => favHotel.id === hotel.id);
 
   useEffect(() => {
     // Load previousBookings from AsyncStorage
@@ -47,8 +49,10 @@ const Booked = () => {
           hotel={item.hotelData}
           touchable={true}
           onPressCard={() => {
+            console.log("Hotel ID:", item.id);
+            console.log("Previous Bookings:", previousBookings);
             navigation.navigate("BookSummary", {
-              bookingId: item.id,
+              // bookingId: item.id,
               bookingHistory: true,
             });
           }}
@@ -76,7 +80,7 @@ const Booked = () => {
             showsVerticalScrollIndicator={false}
           />
         ) : (
-          <Text style={styles.noBookings}>No bookings found.</Text>
+          <Text style={styles.noItems}>No bookings found.</Text>
         )}
 
         <View style={styles.footer}>
@@ -102,7 +106,8 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
-    fontWeight: "bold",
+    // fontWeight: "bold",
+    fontFamily: "Poppins-SemiBold",
     marginBottom: PADDING_SM,
     textAlign: "center",
   },
@@ -119,7 +124,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 2,
     // justifyContent: "space-between",
   },
-  noBookings: {
+  noItems: {
     fontSize: 16,
     color: "gray",
     textAlign: "center",

@@ -21,8 +21,13 @@ const BookSummary = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
   const route = useRoute();
-  const { bookingHistory } = route.params;
-  const bookingData = useSelector(state => state.booking.bookingObject);
+  const { bookingHistory, bookingId } = route.params;
+  const bookingData = bookingHistory
+    ? useSelector(state =>
+        state.booking.previousBookings.find(booking => booking.id === bookingId)
+      )
+    : useSelector(state => state.booking.bookingObject);
+
   const checkInDate = new Date(bookingData.checkIn); // Convert back to Date object
   const checkOutDate = new Date(bookingData.checkOut);
 

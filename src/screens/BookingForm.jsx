@@ -85,6 +85,7 @@ const BookingForm = () => {
       totalPrice: calculateTotal(),
       id: uuidv4(),
       hotelData: {
+        id: hotel.id,
         images: hotel.images,
         name: hotel.name,
         location: hotel.location,
@@ -107,7 +108,7 @@ const BookingForm = () => {
     dispatch(saveBooking(bookingData));
 
     // Navigate to BookingSummary
-    navigation.navigate("BookSummary", { bookingData });
+    navigation.navigate("BookSummary", { bookingHistory: false });
     // console.log("Booking Data:", bookingData);
   };
 
