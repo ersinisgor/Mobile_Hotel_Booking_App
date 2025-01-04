@@ -1,16 +1,16 @@
 # Hotel Booking App
 
 <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-  <img src="./assets/screenshots/sc1.jpg" alt="Intro" style="height: 340px; margin-right: 10px;">
-  <img src="./assets/screenshots/sc2.jpg" alt="" style="height: 340px; margin-right: 10px;">
-  <img src="./assets/screenshots/sc3.jpg" alt="" style="height: 340px; margin-right: 10px;">
-  <img src="./assets/screenshots/sc4.jpg" alt="" style="height: 340px; margin-right: 10px;">
-  <img src="./assets/screenshots/sc5.jpg" alt="" style="height: 340px; margin-right: 10px;">
-  <img src="./assets/screenshots/sc6.jpg" alt="" style="height: 340px; margin-right: 10px;">
-  <img src="./assets/screenshots/sc7.jpg" alt="" style="height: 340px; margin-right: 10px;">
-  <img src="./assets/screenshots/sc8.jpg" alt="" style="height: 340px; margin-right: 10px;">
-  <img src="./assets/screenshots/sc9.jpg" alt="" style="height: 340px; margin-right: 10px;">
-  <img src="./assets/screenshots/sc10.jpg" alt="" style="height: 340px; margin-right: 10px;">
+  <img src="./assets/screenshots/sc1.jpg" alt="Intro" style="height: 340px; ">
+  <img src="./assets/screenshots/sc2.jpg" alt="" style="height: 340px; ">
+  <img src="./assets/screenshots/sc3.jpg" alt="" style="height: 340px; ">
+  <img src="./assets/screenshots/sc4.jpg" alt="" style="height: 340px; ">
+  <img src="./assets/screenshots/sc5.jpg" alt="" style="height: 340px; ">
+  <img src="./assets/screenshots/sc6.jpg" alt="" style="height: 340px; ">
+  <img src="./assets/screenshots/sc7.jpg" alt="" style="height: 340px; ">
+  <img src="./assets/screenshots/sc8.jpg" alt="" style="height: 340px; ">
+  <img src="./assets/screenshots/sc9.jpg" alt="" style="height: 340px; ">
+  <img src="./assets/screenshots/sc10.jpg" alt="" style="height: 340px; ">
   
  
 </div>
