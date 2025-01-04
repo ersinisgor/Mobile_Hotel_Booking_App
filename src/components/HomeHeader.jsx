@@ -10,22 +10,20 @@ import {
 import React from "react";
 import { MaterialIcons } from "@expo/vector-icons";
 import { COLORS, PADDING_SM } from "../utils/constants";
+import { user } from "../utils/userData";
 
 const HomeHeader = () => {
   return (
     <>
       <View style={styles.profileContainer}>
         <View style={styles.imageContainer}>
-          <Image
-            source={require("../../assets/profiles/profile16.jpg")}
-            style={styles.profileImage}
-          />
+          <Image source={user.profileImage} style={styles.profileImage} />
           <View style={styles.badge}></View>
           <View style={styles.badge_2}></View>
         </View>
 
         <Text>
-          👋 Hello <Text style={styles.name}>John</Text>
+          👋 Hello <Text style={styles.name}>{user.firstName}</Text>
         </Text>
       </View>
       <View style={styles.searchContainer}>

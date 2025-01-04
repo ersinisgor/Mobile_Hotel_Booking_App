@@ -65,7 +65,7 @@ const Booked = () => {
   );
 
   return (
-    <SafeAreaView style={styles.container} edges={["top", "bottom"]}>
+    <SafeAreaView style={styles.container} edges={["top"]}>
       <View style={{ paddingHorizontal: PADDING_SM, flex: 1 }}>
         <View style={styles.header}>
           <Text style={styles.title}>Booking History</Text>
