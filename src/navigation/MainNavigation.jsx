@@ -62,15 +62,7 @@ const MainNavigation = () => {
         <Stack.Screen
           name="EditProfile"
           component={EditProfile}
-          options={{
-            animation: "fade_from_bottom",
-            title: "",
-            headerStyle: {
-              elevation: 0,
-              shadowOpacity: 0,
-              borderBottomWidth: 0,
-            },
-          }}
+          options={{ headerShown: false, animation: "fade_from_bottom" }}
         />
         <Stack.Screen
           name="ListHotels"

@@ -5,7 +5,7 @@ export const user = {
   email: "johnAry208@gmail.com",
   phone: "+234 904 6470",
   birth: "1990-01-01",
-  gender: "Female",
+  gender: "Male",
   location: "Lagos, Nigeria",
   profileImage: require("../../assets/profiles/profile16.jpg"),
 };
