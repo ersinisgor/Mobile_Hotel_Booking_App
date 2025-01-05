@@ -59,10 +59,6 @@ Firebase is used for handling user authentication (using Firebase Authentication
 
 Used for storing user data locally on the device, such as previous bookings. This allows the app to retain the booking history even when the app is closed or restarted.
 
-### 6. **Styled Components / TailwindCSS** 🎨
-
-Custom styling is used to ensure the app’s UI is modern and responsive. We use utility-first CSS classes for quick and easy styling.
-
 ## User Instructions 📖
 
 Here’s how the app can be used by end-users:
